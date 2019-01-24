@@ -1,0 +1,24 @@
+﻿一、接口概述
+本接口系统一共包含三个文件，分别为sei3.dll、Update.exe、dwupdate.pbd。所有服务均集成在动态链接库sei3.dll中，
+这个dll文件需要注册成com组件。
+Update.exe和dwupdate.pbd文件，用于接口升级。以上三个文件必须在同一个目录中。
+二、接口环境
+在运行结算系统的业务机上需要具备接口环境，具体操作如下：
+1、	将【接口库dll】文件夹中所有的dll文件拷入C:\WINDOWS\system32下。
+2、	注册sei3.dll文件， sei3.dll为接口的类库文件,具体注册方法如下（其它dll无须注册）：
+3、	sei3.dll注册方法：
+点击 开始 －> 运行 －>输入  regsvr32 sei3.dll 回车
+如果显示 “sei3.dll 中的DLLRegisterServer” 成功字样，说明注册成功。
+4、安装地纬核三版软件。安转加密机驱动，并将usb加密机dll复制到system32下
+三、修改地址
+修改App.config
+1、数据库连接
+2、sbjgbh_ZGYB = "37170201"; //社保机构编号(职工)
+3、sbjgbh_JMYB = "37170205";//社保机构编号(居民)
+3、yybm = "300493"; //医院编码（医院在医保中心的编码）
+4、UserCode_DW = "0001";//医保登录用户名
+5、Password_DW = "1234";//医保登录密码
+
+医保项目编码有重复，大小写有区别执行以下脚本，区分大小写
+ALTER TABLE YB.dbo.YYXM_VS_ZXXM ALTER COLUMN 医保项目编码 NVARCHAR(100) COLLATE chinese_prc_cs_as 
+ALTER TABLE YB.dbo.ZXML ALTER COLUMN 医保项目编码 NVARCHAR(100) COLLATE chinese_prc_cs_as 

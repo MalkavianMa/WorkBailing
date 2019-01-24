@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DW_YBBX.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="众阳医保报销接口_WebReference_serviceproxy" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://222.134.135.155:8888/mhc/services/serviceproxy.serviceproxyHttpSoap11Endpoint/</Value>
+    </Setting>
+    <Setting Name="众阳医保报销接口_WebReference_pipInvokeService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.112.188.5:9001/mhs5/siSettleService</Value>
+    </Setting>
+    <Setting Name="众阳医保报销接口_WebReference1_JwsServiceImplService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.112.188.5:9001/mhs5/siSettleService</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
