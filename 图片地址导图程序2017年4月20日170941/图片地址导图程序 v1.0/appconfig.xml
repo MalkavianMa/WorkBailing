@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppSettings>
+	
+	<ConnectString>Server = DESKTOP-K0A2J7J\MSSQLSERVER2008;DataBase = HXDLPIC;User Id = sa;Password = 123;</ConnectString>
+	<iispath>http://192.168.1.117:8001/picsource/</iispath>
+	<!--秒级-->
+	<timess>5</timess>
+	<!--SWDEV\MSSQLSERVER2008-->
+	<!--是否删除重复照片-->
+	<!--0是不删除 1 是删除-->
+	<Delect>1</Delect>
+	
+	<!--照片路径-->
+	<LuJing>D:\影像库\</LuJing>
+	<!--119导入117数据库-->
+	<!--跳过重复照片-->
+	<!--0不跳过，1跳过-->
+	<chong>1</chong>
+	
+	<!--是否显示日志，0不显示，1显示-->
+	<zi>1</zi>
+  <!--影像库物理路径需要去除的字符-->
+  <RemoveKey>D:\影像库\</RemoveKey>
+
+</AppSettings>

@@ -1,0 +1,304 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Reflection;
+using System.IO;
+using System.Data.OleDb;
+using System.Data.SqlClient;
+using Microsoft.VisualBasic.Devices;
+
+namespace 线路参数导入程序
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+
+        //统计 部分
+        int p = 0;
+        float total = 0;
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            string Connstr = this.txtConn.Text;
+            this.btnImport.Enabled = false;
+
+
+
+            try
+            {
+                if (this.txtSaveWenJianJia.Text.Trim()!="")
+                {
+                    if (this.checkBox2.Checked)
+                    {
+                        //清空历史照片
+                        string sql = "DELETE FROM tbPicFile";
+                        ExeSQL(Connstr, sql, null);
+                        sql = "DELETE FROM tbPicProp";
+                        ExeSQL(Connstr, sql, null);
+                        sql = "DELETE FROM tbProperty";
+                        ExeSQL(Connstr, sql, null);
+                        sql = "DELETE FROM tbTowerPic";
+                        ExeSQL(Connstr, sql, null);
+                    }
+                    //  [5/13/2016 Administrator]
+                    result = new List<FileInfo>();
+                    DirectoryInfo dirinfo = new DirectoryInfo(this.txtSaveWenJianJia.Text.ToString());
+                    List<FileInfo> allfiles = GetFiles(dirinfo, "*.jpg");
+                    foreach (FileInfo FileNm in allfiles)
+                    {
+                        string filename = FileNm.Name;
+                        try
+                        {
+                            int person = 80;
+                            int team = 16;
+                            int unit = 95;
+
+                            if (filename.Contains("#") || filename.Contains("＃"))
+                            {
+                                filename = filename.Replace("#", "号");
+                                filename = filename.Replace("＃", "号");
+                                Computer mycom = new Computer();
+                                mycom.FileSystem.RenameFile(FileNm.FullName, filename);
+                            }
+
+                            string iispath = "http://172.168.50.50:801/picsource/" + FileNm.FullName.Substring(FileNm.FullName.IndexOf("影像库") + 4).Replace(@"\", @"/"); ;
+                            string linename = filename.Substring(0, filename.IndexOf("线") + 1);
+                            string towernum = filename.Substring(filename.IndexOf("线") + 1);
+                            towernum = towernum.Substring(0, towernum.IndexOf("号"));
+                            string part = filename.Substring(filename.IndexOf("号") + 1).Split('.')[0];
+                            string type = "标准化巡视";
+                            string sql = "select [Id],towerno from (SELECT [Id],towerno,row_number() over(order by id asc) as rows  FROM [tbTower] W where lineid=(select Id from tbLine where linename=N'" + filename.Substring(0, filename.IndexOf("线") + 1) + "')) MM where rows=" + towernum + "";
+                            SqlDataReader sdr = GetReader(Connstr, sql, null, CommandType.Text);
+                            int towerid = 0;
+                            string towerno = "";
+                            if (sdr.HasRows)
+                            {
+                                while (sdr.Read())
+                                {
+                                    bool flag = false;
+                                    if (this.checkBox1.Checked)
+                                    {
+                                        //跳过重复照片
+                                        string sql0 = "SELECT Id FROM tbPicFile WHERE FileOSName = N'" + iispath + "'";
+                                        if (ExeSca(Connstr, sql0, null) == null)
+                                        {
+                                            flag = true;
+                                        }
+                                        else
+                                        {
+                                            flag = false;
+                                            writeLog(iispath + "  已存在，跳过！");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //忽视重复照片
+                                        flag = true;
+                                    }
+
+                                    if (flag)
+                                    {
+                                        towerid = Convert.ToInt32(sdr["Id"]);
+                                        towerno = sdr["towerno"].ToString();
+
+                                        DateTime roundsdate = DateTime.Now;
+                                        string sql1 = "INSERT INTO [tbPicFile]([FileOSName],[DisplayName],[AddDate],[AddUser],[Fkid],[Func])VALUES(N'" + iispath + "',N'" + filename + "','" + roundsdate + "'," + person + "," + towerid.ToString() + ",'picfile');SELECT @@IDENTITY";
+                                        object picfileid = ExeSca(Connstr, sql1, null);
+                                        string sql2 = "INSERT INTO [tbTowerPic]([TowerId],[PicFileId])VALUES(" + towerid.ToString() + "," + picfileid.ToString() + ")";
+                                        ExeSQL(Connstr, sql2, null);
+                                        string sql20 = "SELECT [Id]FROM [tbDict] where [Name]=N'" + part + "'";
+                                        string sql201 = "SELECT [Id]FROM [tbDict] where [Name]=N'" + type + "'";
+                                        string sql3 = "INSERT INTO [tbProperty]([LineName],[VolLevel],[TowerNo],[Piccontent],[RoundsPerson],[RoundsDate],[Istrouble],[Isdefect],[Team],[Unit],[PhotoParts],[PhotoType])VALUES";
+                                        sql3 += "(N'" + linename + "','" + linename.Substring(0, linename.IndexOf("V") + 1) + "',N'" + towerno + "',N'" + filename.Split('.')[0] + "'," + person + ",'" + roundsdate + "',0,0,'" + team + "','" + unit + "'," + ExeSca(Connstr, sql20, null).ToString() + "," + ExeSca(Connstr, sql201, null).ToString() + ");SELECT @@IDENTITY";
+                                        object propid = ExeSca(Connstr, sql3, null);
+                                        string sql4 = "INSERT INTO [tbPicProp]([PicFileId],[PropId]) VALUES(" + picfileid.ToString() + "," + propid.ToString() + ")";
+                                        ExeSQL(Connstr, sql4, null);
+                                        writeLog(filename + "  导入成功！");
+                                    }
+
+                                }
+                                sdr.Close();
+                            }
+                            else
+                            {
+                                sdr.Close();
+                                writeLog(filename + "  导入失败！数据库无此数据。");
+                            }
+
+
+                        }
+                        catch (System.Exception ex)
+                        {
+                            writeLog(filename + "  导入失败！");
+                        }
+
+
+
+
+                    }
+                } 
+                else
+                {
+                    MessageBox.Show("请选择影像库文件夹！");
+                }
+
+
+                //  [5/13/2016 Administrator]
+
+
+            }
+            catch (System.Exception ex)
+            {
+                writeLog(ex.Message.ToString());
+                MessageBox.Show(ex.Message.ToString());
+            }
+            this.btnImport.Enabled = true;
+        }
+
+
+        static List<FileInfo> result;
+        private static List<FileInfo> GetFiles(DirectoryInfo directory, string pattern)
+        {
+
+            if (directory.Exists || pattern.Trim() != string.Empty)
+            {
+                try
+                {
+                    foreach (FileInfo info in directory.GetFiles(pattern))
+                    {
+                        result.Add(info);
+                    }
+                }
+                catch (System.Exception ex)
+                {
+
+                }
+                foreach (DirectoryInfo info in directory.GetDirectories())
+                {
+                    GetFiles(info, pattern);
+                }
+            }
+            return result;
+        }
+
+
+
+        //执行增删改的sql语句（需改造或重载成可以执行存储过程的）
+        public static int ExeSQL(string Connstr, string sql, SqlParameter[] sps)
+        {
+            SqlConnection conn = new SqlConnection(Connstr);
+            conn.Open();
+            SqlCommand comm = new SqlCommand(sql, conn);
+            if (sps != null)
+                comm.Parameters.AddRange(sps);
+            int i = comm.ExecuteNonQuery();
+            conn.Close();
+            return i;
+        }
+        //执行查询语句，返回第一行第一列的值
+        public static object ExeSca(string Connstr, string sql, SqlParameter[] sps)
+        {
+            SqlConnection conn = new SqlConnection(Connstr);
+            conn.Open();
+            SqlCommand comm = new SqlCommand(sql, conn);
+            if (sps != null)
+                comm.Parameters.AddRange(sps);
+            object ob = comm.ExecuteScalar();
+            conn.Close();
+            return ob;
+        }
+        //执行查询语句，返回结果集
+        public static SqlDataReader GetReader(string Connstr, string sql, SqlParameter[] sps, CommandType ct)
+        {
+            SqlConnection conn = new SqlConnection(Connstr);
+            conn.Open();
+            SqlCommand comm = new SqlCommand(sql, conn);
+            comm.CommandType = ct;
+            if (sps != null)
+                comm.Parameters.AddRange(sps);
+            SqlDataReader sdr = comm.ExecuteReader(CommandBehavior.CloseConnection);
+            return sdr;
+        }
+
+        private void writeLog(string log)
+        {
+            try
+            {
+                string logtime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff");
+                this.listBox2.Items.Add(log + "  " + logtime);
+                string des = Assembly.GetExecutingAssembly().Location;
+                des = des.Substring(0, des.LastIndexOf(@"\")) + "\\Log";
+                if (!Directory.Exists(des))
+                {
+                    Directory.CreateDirectory(des);
+                }
+                string filename = des + "\\log " + logtime.Split(' ')[0] + ".txt";
+                FileStream myFileStream = new FileStream(filename, FileMode.Append);
+                StreamWriter sw = new StreamWriter(myFileStream, System.Text.Encoding.Default);
+                sw.WriteLine(log + "  " + logtime);
+                myFileStream.Flush();
+                sw.Close();
+                myFileStream.Close();
+            }
+            catch (System.Exception ex)
+            {
+                this.listBox2.Items.Add(ex.Message.ToString() + "  " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff"));
+            }
+        }
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.ShowDialog();
+
+
+            txtSaveWenJianJia.Text = folderBrowserDialog1.SelectedPath;
+
+            // folderBrowserDialog1.RootFolder = System.Environment.SpecialFolder.Desktop;
+
+            //// 设置当前选择的路径
+            //folderBrowserDialog1.SelectedPath = "C:";
+
+            //// 允许在对话框中包括一个新建目录的按钮
+            //folderBrowserDialog1.ShowNewFolderButton = true;
+
+            //// 设置对话框的说明信息
+            //folderBrowserDialog1.Description = "请选择输出目录";
+
+            //if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            //{
+
+            //    // 在此添加代码,选择的路径为 folderBrowserDialog1.SelectedPath
+
+
+            //    folderBrowserDialog1.SelectedPath = System.Environment.CurrentDirectory.ToString() + @"/Data";//默认是程序所在目录的Data文件夹
+            //}
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.listBox2.Items.Clear();
+            }
+            catch (System.Exception ex)
+            {
+            	
+            }
+        }
+    }
+}
