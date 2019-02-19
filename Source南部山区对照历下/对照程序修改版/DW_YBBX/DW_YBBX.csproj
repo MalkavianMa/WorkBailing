@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E3574F24-4F0F-48A8-8C1C-2C7261E96CB8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DW_YBBX</RootNamespace>
+    <AssemblyName>众阳医保报销接口</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <MinimumRequiredVersion>1.0.0.1</MinimumRequiredVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>yibao.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A935050109BFDF6A9D5C4E0BAA4CEFD73B3FAEF9</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>DW_YBBX_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ImportDLL\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.grproLib, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>ImportDLL\Interop.grproLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IReimCompanyInterface, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ImportDLL\IReimCompanyInterface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PersianMaterialSkin.Net35.1.0.0\lib\net35\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="RIClientClassLib, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ImportDLL\RIClientClassLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckBox\AddCheckBoxToDataGridView.cs" />
+    <Compile Include="CheckBox\datagridviewCheckboxHeader.cs" />
+    <Compile Include="CONFIG\Encrypt.cs" />
+    <Compile Include="CONFIG\GridppReport.cs" />
+    <Compile Include="CONFIG\LogManager.cs" />
+    <Compile Include="CONFIG\MSSQLHelper.cs" />
+    <Compile Include="CONFIG\RefCOM.cs" />
+    <Compile Include="CONFIG\StringHelper.cs" />
+    <Compile Include="DW_Handle.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN\Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN\Sel_SBJG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN\Sel_SBJG.Designer.cs">
+      <DependentUpon>Sel_SBJG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ZX_Business\AddHisCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZX_Business\AddHisCode.Designer.cs">
+      <DependentUpon>AddHisCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZX_Business\DownLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZX_Business\DownLoad.Designer.cs">
+      <DependentUpon>DownLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZX_Business\FrmCeneter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZX_Business\FrmCeneter.Designer.cs">
+      <DependentUpon>FrmCeneter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZX_Business\FrmFourYBLY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZX_Business\FrmFourYBLY.Designer.cs">
+      <DependentUpon>FrmFourYBLY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZX_Business\FrmMaxAndMin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZX_Business\FrmMaxAndMin.Designer.cs">
+      <DependentUpon>FrmMaxAndMin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZX_Business\FrmsbjgSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZX_Business\FrmsbjgSelect.Designer.cs">
+      <DependentUpon>FrmsbjgSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZX_Business\SelectDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZX_Business\SelectDelete.Designer.cs">
+      <DependentUpon>SelectDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZX_Business\Xgzfbl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZX_Business\Xgzfbl.Designer.cs">
+      <DependentUpon>Xgzfbl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN\Sel_SBJG.resx">
+      <DependentUpon>Sel_SBJG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ZX_Business\AddHisCode.resx">
+      <DependentUpon>AddHisCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZX_Business\DownLoad.resx">
+      <DependentUpon>DownLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZX_Business\FrmCeneter.resx">
+      <DependentUpon>FrmCeneter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZX_Business\FrmFourYBLY.resx">
+      <DependentUpon>FrmFourYBLY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZX_Business\FrmMaxAndMin.resx">
+      <DependentUpon>FrmMaxAndMin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZX_Business\FrmsbjgSelect.resx">
+      <DependentUpon>FrmsbjgSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZX_Business\SelectDelete.resx">
+      <DependentUpon>SelectDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZX_Business\Xgzfbl.resx">
+      <DependentUpon>Xgzfbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ImportDLL\Common.dll" />
+    <Content Include="ImportDLL\Common.pdb" />
+    <Content Include="ImportDLL\Common.XML" />
+    <Content Include="yibao.ico" />
+    <Content Include="接口使用说明.txt" />
+    <Content Include="ImportDLL\Interop.grproLib.dll" />
+    <Content Include="ImportDLL\IReimCompanyInterface.dll" />
+    <Content Include="ImportDLL\RIClientClassLib.dll" />
+    <Content Include="ImportDLL\RIClientCom.dll" />
+    <Content Include="ImportDLL\System.Data.SQLite.DLL" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Interop.grproLib">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="IReimCompanyInterface">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="RIClientClassLib">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="System.Data.SQLite">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DButility\DButility.csproj">
+      <Project>{f746abe9-e97c-418a-8f77-f8e5a05f4135}</Project>
+      <Name>DButility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
