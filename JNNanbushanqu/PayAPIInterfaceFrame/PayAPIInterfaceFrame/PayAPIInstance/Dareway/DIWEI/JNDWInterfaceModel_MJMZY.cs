@@ -677,6 +677,7 @@ namespace PayAPIInstance.Dareway.DIWEI
             inReimPara.RegInfo.NetPatName = patInfo["xm"];   //姓名
 
             inReimPara.RegInfo.Memo2 = perDialog.reDiBao;
+            inReimPara.RegInfo.RegTimes = inReimPara.RegInfo.RegTimes+1;
 
         }
 

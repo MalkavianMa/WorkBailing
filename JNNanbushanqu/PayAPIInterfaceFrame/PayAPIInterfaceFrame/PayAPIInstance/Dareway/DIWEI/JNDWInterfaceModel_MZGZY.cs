@@ -847,6 +847,7 @@ namespace PayAPIInstance.Dareway.DIWEI
             inReimPara.RegInfo.Memo1 = patInfo["xb"] == "1" ? "男" : "女";                         //性别
             inReimPara.RegInfo.NetPatName = patInfo["xm"]; //姓名
             inReimPara.RegInfo.Memo2 = perDialog.reDiBao;//是否低保
+            inReimPara.RegInfo.RegTimes = inReimPara.RegInfo.RegTimes + 1;
             string rqlb = "";
             if (dicPatInfo["sbjglx"] == "A")
             {
