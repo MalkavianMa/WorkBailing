@@ -1,0 +1,24 @@
+USE [REPORT]
+GO
+
+/****** Object:  Table [dbo].[ZXML_ZFBL_LC]    Script Date: 01/28/2019 14:14:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ZXML_ZFBL_LC](
+	[医保项目编码] [nvarchar](20) NOT NULL,
+	[起始日期] [nvarchar](20) NULL,
+	[终止日期] [nvarchar](20) NULL,
+	[自付比例] [nvarchar](100) NULL,
+	[险种标志] [nvarchar](20) NULL,
+	[自付比例说明] [nvarchar](100) NULL,
+	[社保机构类型] [nvarchar](20) NULL,
+	[限价] [nvarchar](200) NULL
+) ON [PRIMARY]
+
+GO
+
+

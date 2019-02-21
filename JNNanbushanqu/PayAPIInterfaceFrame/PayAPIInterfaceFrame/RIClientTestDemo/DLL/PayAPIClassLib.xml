@@ -1,0 +1,1313 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PayAPIClassLib</name>
+    </assembly>
+    <members>
+        <member name="T:PayAPIClassLib.BLL.ICommClientBLL">
+            <summary>
+            通用业务接口
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.ICommClientBLL.GetNetworkDiagnosis(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            获取中心诊断字段
+            </summary>
+            <param name="networkPatClassId">联网费别ID</param>
+            <param name="input">检索信息</param>
+            <param name="memo">备注</param>
+            <param name="topCount">默认top数量</param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.ICommClientBLL.GetNetworkTypeDict(System.String,System.String,System.String,System.String)">
+            <summary>
+            获取联网类型字典
+            </summary>
+            <param name="networkPatClassId">联网费别ID</param>
+            <param name="input">检索信息</param>
+            <param name="memo">备注</param>
+            <param name="typeFlag">类型标志</param> 
+            <returns></returns>
+        </member>
+        <member name="T:PayAPIClassLib.BLL.IInClientBLL">
+            <summary>
+            住院业务接口
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.InReimRegister(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            住院登记
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.CancelInReimRegister(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            撤销住院登记
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.InReimPreSettle(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            住院预结算
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.InReimSettle(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            住院结算
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.CancelInReimSettle(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            撤销住院结算
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.GetInPatInfo(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            获取住院患者信息
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.GetInRegTimes(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            获取住院登记次数
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.GetInRegInfo(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            获取住院登记信息
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.GetInDetails(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            获取住院费用信息
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.GetInSettleIdAndReorganizeData(PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            获取住院结算ID
+            </summary> 
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.GetInSettle(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter,System.String)">
+            <summary>
+            获取住院结算
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+            <param name="settleType">结算类型 0为普通 其他为POS</param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.SaveInNetworkRegister(PayAPIInterface.Model.In.InNetworkRegisters)">
+            <summary>
+            保存住院登记信息
+            </summary>
+            <param name="regInfo"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.SaveInNetworkRegisterCancelInfo(PayAPIInterface.Model.In.InNetworkRegisters)">
+            <summary>
+            撤销住院登记
+            </summary>
+            <param name="regInfo"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.SaveInNetworkDetails(System.Collections.Generic.List{PayAPIInterface.Model.In.InNetworkUpDetail})">
+            <summary>
+            保存住院费用信息
+            </summary>
+            <param name="details"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.SaveInNetworkSettleMain(PayAPIInterface.Model.In.InNetworkSettleMain)">
+            <summary>
+            保存住院结算信息
+            </summary>
+            <param name="settle"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.SaveInNetworkSettleList(System.Collections.Generic.List{PayAPIInterface.Model.In.InNetworkSettleList})">
+            <summary>
+            保存住院结算返回参数
+            </summary>
+            <param name="settleList"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.UpdateInNetworkRegister(PayAPIInterface.Model.In.InNetworkRegisters)">
+            <summary>
+            更新患者住院登记信息
+            </summary>
+            <param name="register"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.SaveInNetworkSettleRefund(PayAPIInterface.Model.In.InNetworkSettleMain)">
+            <summary>
+            保存住院退费信息
+            </summary>
+            <param name="settle"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IInClientBLL.FixInPayParameterData(PayAPIInterface.ParaModel.InPayParameter,PayAPIInterface.ParaModel.MidifyParaType,System.Decimal)">
+            <summary>
+            修正住院参数
+            </summary>
+            <param name="inPara"></param>
+            <param name="midifyParaType"></param>
+            <param name="inNetworkSettleId"></param>
+        </member>
+        <member name="T:PayAPIClassLib.BLL.CommClientBLL">
+            <summary>
+            通用业务类
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.CommClientBLL.GetNetworkDiagnosis(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            获取中心诊断字典
+            </summary>
+            <param name="networkPatClassId">联网费别ID</param>
+            <param name="input">检索信息</param>
+            <param name="memo">备注</param>
+            <param name="topCount">默认top数量</param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.CommClientBLL.GetNetworkTypeDict(System.String,System.String,System.String,System.String)">
+            <summary>
+            获取联网类型字典
+            </summary>
+            <param name="networkPatClassId">联网费别ID</param>
+            <param name="input">检索信息</param>
+            <param name="memo">备注</param>
+            <param name="typeFlag">类型标志</param> 
+            <returns></returns>
+        </member>
+        <member name="T:PayAPIClassLib.BLL.InClientBLL">
+            <summary>
+            住院业务处理类
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.InReimRegister(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            住院登记
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.CancelInReimRegister(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            撤销住院登记
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.InReimPreSettle(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            住院预结算
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.InReimSettle(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            住院结算
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.CancelInReimSettle(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            撤销住院结算
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.GetInPatInfo(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            获取住院患者信息
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.GetInRegTimes(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            获取住院登记次数
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.GetInRegInfo(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            获取住院登记信息
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.GetInDetails(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            获取住院费用信息
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.GetInSettleIdAndReorganizeData(PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            获取住院结算ID并重新组织数据
+            </summary> 
+            <param name="inPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.GetInSettle(PayAPIClassLib.ParaModel.ClientInParameter,PayAPIInterface.ParaModel.InPayParameter,System.String)">
+            <summary>
+            获取住院结算
+            </summary>
+            <param name="hisPara"></param>
+            <param name="inPara"></param>
+            <param name="settleType">结算参数</param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.SaveInNetworkRegister(PayAPIInterface.Model.In.InNetworkRegisters)">
+            <summary>
+            保存住院登记信息
+            </summary>
+            <param name="regInfo"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.SaveInNetworkRegisterCancelInfo(PayAPIInterface.Model.In.InNetworkRegisters)">
+            <summary>
+            撤销住院登记
+            </summary>
+            <param name="regInfo"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.SaveInNetworkDetails(System.Collections.Generic.List{PayAPIInterface.Model.In.InNetworkUpDetail})">
+            <summary>
+            保存住院费用信息
+            </summary>
+            <param name="details">费用信息</param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.SaveInNetworkSettleMain(PayAPIInterface.Model.In.InNetworkSettleMain)">
+            <summary>
+            保存住院结算信息
+            </summary>
+            <param name="settle"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.SaveInNetworkSettleList(System.Collections.Generic.List{PayAPIInterface.Model.In.InNetworkSettleList})">
+            <summary>
+            保存住院结算返回参数
+            </summary>
+            <param name="settleList"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.UpdateInNetworkRegister(PayAPIInterface.Model.In.InNetworkRegisters)">
+            <summary>
+            更新患者住院登记信息
+            </summary>
+            <param name="register"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.SaveInNetworkSettleRefund(PayAPIInterface.Model.In.InNetworkSettleMain)">
+            <summary>
+            保存住院退费信息
+            </summary>
+            <param name="settle"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.InClientBLL.FixInPayParameterData(PayAPIInterface.ParaModel.InPayParameter,PayAPIInterface.ParaModel.MidifyParaType,System.Decimal)">
+            <summary>
+            修正住院参数
+            </summary>
+            <param name="inPara"></param>
+            <param name="midifyParaType"></param>
+            <param name="inNetworkSettleId"></param>
+        </member>
+        <member name="T:PayAPIClassLib.BLL.IOutClientBLL">
+            <summary>
+            门诊业务接口
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.OutReimRegister(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            联网门诊读卡
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.OutReimPreSettle(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            联网门诊联网预结算
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.OutReimSettle(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            联网门诊读卡
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.CancelOutReimSettle(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            撤销门诊结算
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.GetOutPatInfo(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            获取HIS门诊患者信息
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.GetOutNetworkSettleId">
+            <summary>
+            获取联网结算ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.GetOutPatDetails(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            获取HIS门诊费用明细
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.GetRefundTradePayRecords(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            获取门诊要退费的支付记录信息
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.GetCancelTradePayRecords(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            获取门诊要撤销的支付记录信息
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.GetOutNetworkSettle(System.Decimal,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            获取门诊结算信息
+            </summary>
+            <param name="outNetworkSettleId"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.GetOutNetworkSettleStatus(System.Decimal)">
+            <summary>
+            获取门诊结算状态
+            </summary>
+            <param name="outPatId"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.GetOutPatDetailsByChargeIds(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            根据费用ID来获取费用明细信息
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.GetOutNetworkSettleBySettleNo(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            根据结算号查询结算数据
+            </summary>
+            <param name="hisPara">客户端传入参数</param>
+            <param name="payPara">第三方参数</param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.SaveOutNetworkRegisters(PayAPIInterface.Model.Out.OutNetworkRegisters)">
+            <summary>
+            保存门诊登记信息
+            </summary>
+            <param name="regInfo"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.SaveOutNetworkDetails(System.Collections.Generic.List{PayAPIInterface.Model.Out.OutNetworkUpDetail})">
+            <summary>
+            保存费用明细信息
+            </summary> 
+            <param name="details"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.SaveOutNetworkSettle(PayAPIInterface.Model.Out.OutNetworkSettleMain)">
+            <summary>
+            保存门诊结算数据
+            </summary>
+            <param name="settleInfo"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.SaveOutNetworkSettleList(System.Collections.Generic.List{PayAPIInterface.Model.Out.OutNetworkSettleList})">
+            <summary>
+            保存门诊结算返回参数
+            </summary>
+            <param name="settleList">参数列表</param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.SaveTradePayRecords(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            保存门诊交易支付流水信息
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.SetTradePayRecordStatus(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            更新交易支付记录状态
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.SaveTradePayingStatus(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            保存门诊支付记录支付中
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.SetTradePayRecordBackType(System.Collections.Generic.List{PayAPIInterface.Model.Out.TradePayRecord},System.Int32)">
+            <summary>
+            保存交易支付记录
+            </summary>
+            <param name="tradePayRecordList">支付列表</param> 
+            <param name="backType">0 正常支付记录   1 当前支付记录已进行冲退操作，无法正常结算使用  2 冲退记录';</param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.SaveRefundTradePayRecords(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter,System.Collections.Generic.List{PayAPIInterface.Model.Out.TradePayRecord},System.Int32)">
+            <summary>
+            保存退费交易支付流水信息
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+            <param name="tradePayRecords"></param>
+            <param name="backType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.SaveOutNetworkRefund(PayAPIInterface.Model.Out.OutNetworkSettleMain)">
+            <summary>
+            保存门诊结算数据
+            </summary>
+            <param name="settleInfo"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.SaveOutNetworkSettleStatus(PayAPIInterface.ParaModel.OutPayParameter,System.String)">
+            <summary>
+            保存门诊结算状态
+            </summary>
+            <param name="outPara">门诊参数</param> 
+            <param name="status">状态</param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.IOutClientBLL.FixOutPayParameterData(PayAPIInterface.ParaModel.OutPayParameter,System.Boolean)">
+            <summary>
+            修正门诊参数数据
+            </summary>
+            <param name="outPara"></param>
+            <param name="isRegInfo">是否门诊登记信息</param>
+        </member>
+        <member name="T:PayAPIClassLib.BLL.ITradeClientBLL">
+            <summary>
+            支付业务接口
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.ITradeClientBLL.TradePay(PayAPIInterface.ParaModel.TradePayParameter)">
+            <summary>
+            支付
+            </summary>
+            <param name="tradePara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.ITradeClientBLL.TradeCancel(PayAPIInterface.ParaModel.TradePayParameter)">
+            <summary>
+            撤销支付
+            </summary>
+            <param name="tradePara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.ITradeClientBLL.TradeRefund(PayAPIInterface.ParaModel.TradePayParameter)">
+            <summary>
+            撤销支付
+            </summary>
+            <param name="tradePara"></param>
+        </member>
+        <member name="T:PayAPIClassLib.BLL.OutClientBLL">
+            <summary>
+            客户端业务处理类
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.OutReimRegister(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            联网门诊读卡
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.OutReimPreSettle(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            联网门诊预结算
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.OutReimSettle(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            联网门诊结算
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.CancelOutReimSettle(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            联网门诊结算
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.GetOutPatInfo(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            获取HIS门诊患者信息
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.GetOutNetworkSettleId">
+            <summary>
+            获取联网结算ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.GetOutPatDetails(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            获取HIS门诊费用明细
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.GetRefundTradePayRecords(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            获取门诊要退费的支付记录信息
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.GetCancelTradePayRecords(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            获取门诊要撤销的支付记录信息
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.GetOutNetworkSettle(System.Decimal,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            获取门诊结算信息
+            </summary>
+            <param name="outNetworkSettleId"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.GetOutNetworkSettleStatus(System.Decimal)">
+            <summary>
+            获取门诊结算状态
+            </summary>
+            <param name="tradeId">订单ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.GetOutPatDetailsByChargeIds(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            根据费用ID获取相应的费用信息
+            </summary>
+            <param name="hisPara"></param>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.GetOutNetworkSettleBySettleNo(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            根据结算号查询结算数据
+            </summary>
+            <param name="hisPara">客户端传入参数</param>
+            <param name="outPara">第三方参数</param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.SaveOutNetworkRegisters(PayAPIInterface.Model.Out.OutNetworkRegisters)">
+            <summary>
+            保存门诊登记信息
+            </summary>
+            <param name="regInfo"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.SaveOutNetworkDetails(System.Collections.Generic.List{PayAPIInterface.Model.Out.OutNetworkUpDetail})">
+            <summary>
+            保存费用明细信息
+            </summary>
+            <param name="details"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.SaveOutNetworkSettle(PayAPIInterface.Model.Out.OutNetworkSettleMain)">
+            <summary>
+            保存门诊结算数据
+            </summary>
+            <param name="settleInfo"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.SaveOutNetworkSettleList(System.Collections.Generic.List{PayAPIInterface.Model.Out.OutNetworkSettleList})">
+            <summary>
+            保存门诊结算返回参数
+            </summary>
+            <param name="settleList">参数列表</param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.SaveTradePayRecords(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            保存交易支付记录
+            </summary>
+            <param name="hisPara">his参数</param> 
+            <param name="outPara">门诊接口入参</param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.SetTradePayRecordStatus(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            更新交易支付记录状态
+            </summary>
+            <param name="hisPara">his参数</param> 
+            <param name="outPara">门诊接口入参</param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.SaveTradePayingStatus(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            保存交易支付记录
+            </summary>
+            <param name="hisPara">his传入参数</param> 
+            <param name="outPara">门诊参数</param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.SetTradePayRecordBackType(System.Collections.Generic.List{PayAPIInterface.Model.Out.TradePayRecord},System.Int32)">
+            <summary>
+            保存交易支付记录
+            </summary>
+            <param name="tradePayRecordList">支付列表</param> 
+             <param name="backType">0 正常支付记录   1 当前支付记录已进行冲退操作，无法正常结算使用  2 冲退记录';</param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.SaveRefundTradePayRecords(PayAPIClassLib.ParaModel.ClientOutParameter,PayAPIInterface.ParaModel.OutPayParameter,System.Collections.Generic.List{PayAPIInterface.Model.Out.TradePayRecord},System.Int32)">
+            <summary>
+            保存退费支付记录信息
+            </summary>
+            <param name="hisPara"> </param> 
+            <param name="outPara"> </param> 
+            <param name="tradePayRecords"> </param> 
+            <param name="backType"> </param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.SaveOutNetworkRefund(PayAPIInterface.Model.Out.OutNetworkSettleMain)">
+            <summary>
+            保存门诊结算数据
+            </summary>
+            <param name="settleInfo"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.SaveOutNetworkSettleStatus(PayAPIInterface.ParaModel.OutPayParameter,System.String)">
+            <summary>
+            保存门诊结算状态
+            </summary>
+            <param name="outPara"></param> 
+            <param name="status"></param> 
+        </member>
+        <member name="M:PayAPIClassLib.BLL.OutClientBLL.FixOutPayParameterData(PayAPIInterface.ParaModel.OutPayParameter,System.Boolean)">
+            <summary>
+            修正门诊参数数据
+            </summary>
+            <param name="outPara"></param>
+            <param name="isRegInfo">是否门诊登记信息</param>
+        </member>
+        <member name="T:PayAPIClassLib.BLL.TradeClientBLL">
+            <summary>
+            客户端业务处理类
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.TradeClientBLL.TradePay(PayAPIInterface.ParaModel.TradePayParameter)">
+            <summary>
+            支付
+            </summary>
+            <param name="tradePara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.TradeClientBLL.TradeRefund(PayAPIInterface.ParaModel.TradePayParameter)">
+            <summary>
+            支付退费（可部分退费）
+            </summary>
+            <param name="tradePara"></param>
+        </member>
+        <member name="M:PayAPIClassLib.BLL.TradeClientBLL.TradeCancel(PayAPIInterface.ParaModel.TradePayParameter)">
+            <summary>
+            支付撤销
+            </summary>
+            <param name="tradePara"></param>
+        </member>
+        <member name="T:PayAPIClassLib.Comm.NetworkDictHelper">
+            <summary>
+            字典通用帮助类
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.Comm.NetworkDictHelper.GetNetworkDiagnosis(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            获取中心诊断字典
+            </summary>
+            <param name="networkPatClassId">联网费别ID</param>
+            <param name="input">检索信息</param>
+            <param name="memo">备注</param>
+            <param name="topCount">默认top数量</param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.Comm.NetworkDictHelper.GetNetworkTypeDict(System.String,System.String,System.String,System.String)">
+            <summary>
+            获取联网类型字典
+            </summary>
+            <param name="networkPatClassId">联网费别ID</param>
+            <param name="input">检索信息</param>
+            <param name="memo">备注</param>
+            <param name="typeFlag">类型标志</param> 
+            <returns></returns>
+        </member>
+        <member name="T:PayAPIClassLib.ExceptionHandle.MZExceptionHandle">
+            <summary>
+            门诊的异常处理类
+            </summary>
+        </member>
+        <member name="F:PayAPIClassLib.ExceptionHandle.MZExceptionHandle.enumStep">
+            <summary>
+            业务步骤
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.ExceptionHandle.MZExceptionHandle.OutPatSettleExceptionHandle(PayAPIInterface.ParaModel.OutPayParameter,PayAPIClassLib.ParaModel.ClientOutParameter)">
+            <summary>
+            门诊结算异常处理
+            </summary>
+            <param name="payPara">门诊参数</param>
+            <param name="hisPara">HIS参数</param>
+            <returns></returns>
+        </member>
+        <member name="T:PayAPIClassLib.ExceptionHandle.EnumMZStep">
+            <summary>
+            枚举，门诊结算状态枚举值
+            </summary>
+        </member>
+        <member name="T:PayAPIClassLib.ExceptionHandle.PayMZExceptionHandle">
+            <summary>
+            门诊支付的异常处理类
+            </summary>
+        </member>
+        <member name="F:PayAPIClassLib.ExceptionHandle.PayMZExceptionHandle.enumStep">
+            <summary>
+            业务步骤
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.ExceptionHandle.PayMZExceptionHandle.TradePayExceptionHandle(PayAPIInterface.ParaModel.OutPayParameter,PayAPIClassLib.ParaModel.ClientOutParameter)">
+            <summary>
+            门诊支付异常处理
+            </summary>
+            <param name="payPara">门诊参数</param>
+            <param name="hisPara">HIS参数</param>
+            <returns></returns>
+        </member>
+        <member name="T:PayAPIClassLib.ExceptionHandle.EnumPayMZStep">
+            <summary>
+            枚举，门诊支付状态枚举值
+            </summary>
+        </member>
+        <member name="T:PayAPIClassLib.ExceptionHandle.PayZYExceptionHandle">
+            <summary>
+            住院支付的异常处理类
+            </summary>
+        </member>
+        <member name="F:PayAPIClassLib.ExceptionHandle.PayZYExceptionHandle.enumStep">
+            <summary>
+            业务步骤
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.ExceptionHandle.PayZYExceptionHandle.TradePayExceptionHandle(PayAPIInterface.ParaModel.InPayParameter,PayAPIClassLib.ParaModel.ClientInParameter)">
+            <summary>
+            住院支付异常处理
+            </summary>
+            <param name="payPara">住院参数</param>
+            <param name="hisPara">HIS参数</param>
+            <returns></returns>
+        </member>
+        <member name="T:PayAPIClassLib.ExceptionHandle.EnumPayZYStep">
+            <summary>
+            枚举，住院支付状态枚举值
+            </summary>
+        </member>
+        <member name="T:PayAPIClassLib.ExceptionHandle.ZYExceptionHandle">
+            <summary>
+            住院的异常处理类
+            </summary>
+        </member>
+        <member name="F:PayAPIClassLib.ExceptionHandle.ZYExceptionHandle.enumStep">
+            <summary>
+            业务步骤
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.ExceptionHandle.ZYExceptionHandle.InRegisterExceptionHandle(PayAPIInterface.ParaModel.InPayParameter,PayAPIClassLib.ParaModel.ClientInParameter)">
+            <summary>
+            住院登记异常处理
+            </summary>
+            <param name="payPara">住院参数</param>
+            <param name="hisPara">HIS参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.ExceptionHandle.ZYExceptionHandle.InSettleExceptionHandle(PayAPIInterface.ParaModel.InPayParameter,PayAPIClassLib.ParaModel.ClientInParameter)">
+            <summary>
+            住院结算异常处理
+            </summary>
+            <param name="payPara">住院参数</param>
+            <param name="hisPara">HIS参数</param>
+            <returns></returns>
+        </member>
+        <member name="T:PayAPIClassLib.ExceptionHandle.EnumZYStep">
+            <summary>
+            枚举，住院状态枚举值
+            </summary>
+        </member>
+        <member name="T:PayAPIClassLib.Factory.ClientBLLFactory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.Factory.ClientBLLFactory.GetCommClientBLLInstance">
+            <summary>
+            获取通用客户端业务处理类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.Factory.ClientBLLFactory.GetOutClientBLLInstance">
+            <summary>
+            获取住院客户端业务处理类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.Factory.ClientBLLFactory.GetInClientBLLInstance">
+            <summary>
+            获取住院客户端业务处理类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.Factory.ClientBLLFactory.GettTradeClientBLLInstance">
+            <summary>
+            获取交易业务处理类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:PayAPIClassLib.InFace.InClientFace">
+            <summary>
+            住院业务
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.InFace.InClientFace.InNetworkRegister(System.String)">
+            <summary>
+            住院登记
+            </summary>
+            <param name="tradeInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.InFace.InClientFace.InNetworkRegisterCancel(System.String)">
+            <summary>
+            撤销住院登记
+            </summary>
+            <param name="tradeInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.InFace.InClientFace.InNetworkPreSettle(System.String,System.Boolean)">
+            <summary>
+            住院联网预结算
+            </summary>
+            <param name="tradeInfo"></param>
+            <param name="isMiddleSettle">是否中间结算</param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.InFace.InClientFace.InNetworkPreSettleForHSZ(System.String)">
+            <summary>
+            住院联网预结算护士站
+            </summary>
+            <param name="tradeInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.InFace.InClientFace.InNetworkSettle(System.String,System.Boolean)">
+            <summary>
+            住院结算
+            </summary>
+            <param name="tradeInfo">交易信息</param>
+            <param name="isMiddleSettle">是否中间结算</param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.InFace.InClientFace.CancelInNetworkSettle(System.String,System.Boolean)">
+            <summary>
+            撤销住院结算
+            </summary>
+            <param name="tradeInfo"></param>
+            <param name="isMiddleSettle">是否中间结算</param>
+            <returns></returns>
+        </member>
+        <member name="T:PayAPIClassLib.Initialization.PayComInitialiazation">
+            <summary>
+            接口控件初始化类(普通)
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.Initialization.PayComInitialiazation.InitEnvironment(System.String)">
+            <summary>
+            初始化控件
+            </summary>
+            <param name="initParaStr">初始字符串</param> 
+            <returns></returns>
+        </member>
+        <member name="T:PayAPIClassLib.Initialization.TradeInvoke">
+            <summary>
+            交易调用
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.Initialization.TradeInvoke.Invoke(System.String)">
+            <summary>
+            调用接口
+            </summary>
+            <param name="tradeInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PayAPIClassLib.InterfaceTypeEnum">
+            <summary>
+            接口类型
+            </summary>
+        </member>
+        <member name="F:PayAPIClassLib.InterfaceTypeEnum.ReimType">
+            <summary>
+            报销类型
+            </summary>
+        </member>
+        <member name="F:PayAPIClassLib.InterfaceTypeEnum.TradePay">
+            <summary>
+            支付类型
+            </summary>
+        </member>
+        <member name="T:PayAPIClassLib.CommInterfaceFactory">
+            <summary>
+            支付接口工厂类
+            </summary>
+        </member>
+        <member name="F:PayAPIClassLib.CommInterfaceFactory.IReimCompanyClassInstanceDic">
+            <summary>
+            厂商接口工厂类实例池
+            </summary>
+        </member>
+        <member name="F:PayAPIClassLib.CommInterfaceFactory.ITradePayClassInstanceDic">
+            <summary>
+            支付接口工厂类实例池
+            </summary>
+        </member>
+        <member name="F:PayAPIClassLib.CommInterfaceFactory.NetworkClassInterfaceTypeDict">
+            <summary>
+            联网接口对应类型字典
+            </summary>
+        </member>
+        <member name="F:PayAPIClassLib.CommInterfaceFactory.LoadInstanceErrorDict">
+            <summary>
+            加载错误字典
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.CommInterfaceFactory.#cctor">
+            <summary>
+            静态构造函数
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.CommInterfaceFactory.LoadReimInterfaceInstance">
+            <summary>
+            加载类的实例
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.CommInterfaceFactory.AddNewInstance(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            向实例池中添加新实例
+            </summary>
+            <param name="netWorkClassId">联网类型编号</param>
+            <param name="strAssemblyName">程序集名称</param>
+            <param name="ClassName">类型全名</param>
+            <param name="networkType">联网类型</param>
+        </member>
+        <member name="M:PayAPIClassLib.CommInterfaceFactory.GetInstanceOfReimComInterface(System.String)">
+            <summary>
+            根据联网费别获取接口实例
+            </summary>
+            <param name="networkPatClassId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.CommInterfaceFactory.GetInstanceOfTradePayInterface(System.String)">
+            <summary>
+            根据联网费别获取支付接口
+            </summary>
+            <param name="networkPatClassId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.CommInterfaceFactory.GetInteraceType(System.String)">
+            <summary>
+            获取接口类型
+            </summary>
+            <param name="networkPatClassId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PayAPIClassLib.ParaModel.ClientInitParameter">
+            <summary>
+            初始化信息
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientInitParameter.UserSysId">
+            <summary>
+            用户系统编号
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientInitParameter.WebApiAddress">
+            <summary>
+            接口服务地址
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientInitParameter.WorkStationId">
+            <summary>
+            工作站编号
+            </summary>
+        </member>
+        <member name="T:PayAPIClassLib.ParaModel.ClientOutParameter">
+            <summary>
+            客户端门诊入参
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientOutParameter.OutPatId">
+            <summary>
+            门诊患者信息编号
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientOutParameter.RegisterChargeIds">
+            <summary>
+            门诊挂号费用ID列表
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientOutParameter.NetWorkBillNo">
+            <summary>
+            结算流水号
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientOutParameter.TradeAmount">
+            <summary>
+            交易金额
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientOutParameter.NetworkType">
+            <summary>
+            结算类型
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientOutParameter.IsBlanceInvoice">
+            <summary>
+            结算类型
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientOutParameter.TradePayId">
+            <summary>
+            交易支付ID
+            </summary>
+        </member>
+        <member name="T:PayAPIClassLib.ParaModel.ClientParameter">
+            <summary>
+            客户端入参
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientParameter.TradeCode">
+            <summary>
+            交易号
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientParameter.TradeType">
+            <summary>
+            交易类型
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientParameter.TradeId">
+            <summary>
+            交易ID
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientParameter.TradeSource">
+            <summary>
+            发起交易源
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientParameter.NetworkPatClassId">
+            <summary>
+            联网费别ID
+            </summary>
+        </member>
+        <member name="T:PayAPIClassLib.ParaModel.ClientReturnParameter">
+            <summary>
+            客户端返回参数
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientReturnParameter.Result">
+            <summary>
+            返回结果
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientReturnParameter.ErrMsg">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientReturnParameter.PayList">
+            <summary>
+            支付列表
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientReturnParameter.SettleStatus">
+            <summary>
+            结算状态
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientReturnParameter.OutNetworkSettleId">
+            <summary>
+            门诊联网结算ID
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientReturnParameter.NetBillNo">
+            <summary>
+            结算流水号
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientReturnParameter.PayAmount">
+            <summary>
+            费用总额
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientReturnParameter.PaySettleAmount">
+            <summary>
+            报销总金额
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientReturnParameter.PatInfo">
+            <summary>
+            患者信息
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientReturnParameter.NetCardNo">
+            <summary>
+            交易卡号（POS模式下使用）
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientReturnParameter.ReturnFalseForever">
+            <summary>
+            医保不可撤销标志
+            </summary>
+        </member>
+        <member name="T:PayAPIClassLib.ParaModel.ClientInParameter">
+            <summary>
+            客户端住院入参
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientInParameter.InBillIds">
+            <summary>
+            需要结算的费用列表
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientInParameter.IsMiddleSettle">
+            <summary>
+            是否中间结算
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientInParameter.PatInHosId">
+            <summary>
+            住院患者 住院编号
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientInParameter.NetBillNo">
+            <summary>
+            结算流水号
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientInParameter.TradeAmount">
+            <summary>
+            交易金额
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientInParameter.WardId">
+            <summary>
+            病区编号
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientInParameter.DeptId">
+            <summary>
+            科室编号
+            </summary>
+        </member>
+        <member name="P:PayAPIClassLib.ParaModel.ClientInParameter.PatInHosIds">
+            <summary>
+            患者住院登记编号（逗号分割）
+            </summary>
+        </member>
+        <member name="T:PayAPIClassLib.OutFace.OutClientFace">
+            <summary>
+            门诊业务整合类
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.OutFace.OutClientFace.ReadCard(System.String)">
+            <summary>
+            读取卡信息
+            </summary>
+            <param name="tradeInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.OutFace.OutClientFace.OutPatSettle(System.String)">
+            <summary>
+            门诊结算
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.OutFace.OutClientFace.GetOutPatSettleStatus(System.String)">
+            <summary>
+            获取门诊患者结算状态
+            </summary>
+            <param name="tradeInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.OutFace.OutClientFace.CancelOutPatSettle(System.String)">
+            <summary>
+            撤销门诊结算
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.OutFace.OutClientFace.CancelOriginalTradeSettle(System.String)">
+            <summary>
+            撤销原始订单结算
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.OutFace.OutClientFace.OutPatRegisterSettle(System.String)">
+            <summary>
+            挂号联网结算
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.OutFace.OutClientFace.CancelOutPatRegisterSettle(System.String)">
+            <summary>
+            撤销挂号结算
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:PayAPIClassLib.TradeFace.TradeClientFace">
+            <summary>
+            支付交易
+            </summary>
+        </member>
+        <member name="M:PayAPIClassLib.TradeFace.TradeClientFace.TradePay(System.String)">
+            <summary>
+            门诊交易支付
+            </summary>
+            <returns></returns> 
+        </member>
+        <member name="M:PayAPIClassLib.TradeFace.TradeClientFace.GetOutPatSettleStatus(System.String)">
+            <summary>
+            获取门诊患者结算状态
+            </summary>
+            <param name="tradeInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.TradeFace.TradeClientFace.TradeRefund(System.String)">
+            <summary>
+            门诊订单退费（部分退费）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.TradeFace.TradeClientFace.InTradePay(System.String)">
+            <summary>
+            住院交易支付
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIClassLib.TradeFace.TradeClientFace.InTradeRefund(System.String,System.Boolean)">
+            <summary>
+            住院订单退费（部分退费）
+            </summary>
+            <param name="tradeInfo">交易信息</param>
+            <param name="isCancel">是否撤销</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

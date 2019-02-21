@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{53EE1535-0CF0-4A1D-9ED5-7CF32FD8F016}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PayAPIInstance</RootNamespace>
+    <AssemblyName>PayAPIInstance</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.SDACARDLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RIClientTestDemo\DLL\AxInterop.SDACARDLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SDACARDLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\RIClientTestDemo\DLL\Interop.SDACARDLib.dll</HintPath>
+    </Reference>
+    <Reference Include="PayAPIClassLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RIClientTestDemo\DLL\PayAPIClassLib.dll</HintPath>
+    </Reference>
+    <Reference Include="PayAPIInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RIClientTestDemo\DLL\PayAPIInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="PayAPIUtilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RIClientTestDemo\DLL\PayAPIUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dareway\JiNan\Dialog\DiBaoQxjsZy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dareway\JiNan\Dialog\DiBaoQxjsZy.Designer.cs">
+      <DependentUpon>DiBaoQxjsZy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tools\DibaoSdaCash.cs" />
+    <Compile Include="Dareway\DIWEI\Dialog\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dareway\DIWEI\Dialog\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dareway\DIWEI\Dialog\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dareway\DIWEI\Dialog\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dareway\DIWEI\Dialog\Formsfyybk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dareway\DIWEI\Dialog\Formsfyybk.Designer.cs">
+      <DependentUpon>Formsfyybk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dareway\DIWEI\Dialog\frmCARD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dareway\DIWEI\Dialog\frmCARD.Designer.cs">
+      <DependentUpon>frmCARD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dareway\DIWEI\Dialog\frmSelectPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dareway\DIWEI\Dialog\frmSelectPerson.Designer.cs">
+      <DependentUpon>frmSelectPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dareway\DIWEI\Dialog\FrmXzjg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dareway\DIWEI\Dialog\FrmXzjg.designer.cs">
+      <DependentUpon>FrmXzjg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dareway\DIWEI\Dialog\MfyyJblr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dareway\DIWEI\Dialog\MfyyJblr.Designer.cs">
+      <DependentUpon>MfyyJblr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dareway\DIWEI\JNDWInterfaceModel_JMMG.cs" />
+    <Compile Include="Dareway\DIWEI\JNDWInterfaceModel_JMTC.cs" />
+    <Compile Include="Dareway\DIWEI\JNDWInterfaceModel_MFYY.cs" />
+    <Compile Include="Dareway\DIWEI\JNDWInterfaceModel_MJMZY.cs" />
+    <Compile Include="Dareway\DIWEI\JNDWInterfaceModel_MZGZY.cs" />
+    <Compile Include="Dareway\DIWEI\JNDWInterfaceModel_PTZG.cs" />
+    <Compile Include="Dareway\DIWEI\JNDWInterfaceModel_ZGMG.cs" />
+    <Compile Include="Dareway\DIWEI\JNDWInterfaceModel_ZGTC.cs" />
+    <Compile Include="Dareway\JiNan\Dialog\DiBaoJS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dareway\JiNan\Dialog\DiBaoJS.Designer.cs">
+      <DependentUpon>DiBaoJS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dareway\JiNan\Dialog\DiBaoJS_Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dareway\JiNan\Dialog\DiBaoJS_Confirm.Designer.cs">
+      <DependentUpon>DiBaoJS_Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dareway\JiNan\Dialog\DiBaoJS_Confirm_zy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dareway\JiNan\Dialog\DiBaoJS_Confirm_zy.Designer.cs">
+      <DependentUpon>DiBaoJS_Confirm_zy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dareway\JiNan\Dialog\DiBaoJS_zy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dareway\JiNan\Dialog\DiBaoJS_zy.Designer.cs">
+      <DependentUpon>DiBaoJS_zy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dareway\JiNan\Dialog\DiBaoQXJS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dareway\JiNan\Dialog\DiBaoQXJS.Designer.cs">
+      <DependentUpon>DiBaoQXJS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dareway\JiNan\Dialog\dibao_zy_continue_js.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dareway\JiNan\Dialog\dibao_zy_continue_js.Designer.cs">
+      <DependentUpon>dibao_zy_continue_js.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dareway\JiNan\Dialog\PersonInfoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dareway\JiNan\Dialog\PersonInfoDialog.designer.cs">
+      <DependentUpon>PersonInfoDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiXiaDiBao\Dialog\frmCARD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiXiaDiBao\Dialog\frmCARD.Designer.cs">
+      <DependentUpon>frmCARD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiXiaDiBao\Dialog\frmJS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiXiaDiBao\Dialog\frmJS.designer.cs">
+      <DependentUpon>frmJS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiXiaDiBao\Dialog\frmPhoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiXiaDiBao\Dialog\frmPhoto.Designer.cs">
+      <DependentUpon>frmPhoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiXiaDiBao\Dialog\frmQXJS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiXiaDiBao\Dialog\frmQXJS.Designer.cs">
+      <DependentUpon>frmQXJS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiXiaDiBao\LiXiaDiBaoModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="tools\DataGridSort\BindingCollection.cs" />
+    <Compile Include="tools\DataGridSort\ObjectPropertyCompare.cs" />
+    <Compile Include="Web References\WebReferenceDiBao\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PayAPIInterfaceHandle\PayAPIInterfaceHandle.csproj">
+      <Project>{672555dd-b324-4654-89f8-5ffac4e90e2c}</Project>
+      <Name>PayAPIInterfaceHandle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayAPIResolver\PayAPIResolver.csproj">
+      <Project>{50cf6a10-3dfd-4db8-8f1d-3b7c7e0855b9}</Project>
+      <Name>PayAPIResolver</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebReferenceDiBao\DiBaoWebService.wsdl" />
+    <None Include="Web References\WebReferenceDiBao\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\PayAPIInstance.dll" />
+    <Content Include="bin\Debug\PayAPIInstance.pdb" />
+    <None Include="Web References\WebReferenceDiBao\DiBaoWebService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dareway\DIWEI\Dialog\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dareway\DIWEI\Dialog\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dareway\DIWEI\Dialog\Formsfyybk.resx">
+      <DependentUpon>Formsfyybk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dareway\DIWEI\Dialog\frmCARD.resx">
+      <DependentUpon>frmCARD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dareway\DIWEI\Dialog\frmSelectPerson.resx">
+      <DependentUpon>frmSelectPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dareway\DIWEI\Dialog\FrmXzjg.resx">
+      <DependentUpon>FrmXzjg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dareway\DIWEI\Dialog\MfyyJblr.resx">
+      <DependentUpon>MfyyJblr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dareway\JiNan\Dialog\DiBaoJS.resx">
+      <DependentUpon>DiBaoJS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dareway\JiNan\Dialog\DiBaoJS_Confirm.resx">
+      <DependentUpon>DiBaoJS_Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dareway\JiNan\Dialog\DiBaoJS_Confirm_zy.resx">
+      <DependentUpon>DiBaoJS_Confirm_zy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dareway\JiNan\Dialog\DiBaoJS_zy.resx">
+      <DependentUpon>DiBaoJS_zy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dareway\JiNan\Dialog\DiBaoQXJS.resx">
+      <DependentUpon>DiBaoQXJS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dareway\JiNan\Dialog\DiBaoQxjsZy.resx">
+      <DependentUpon>DiBaoQxjsZy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dareway\JiNan\Dialog\dibao_zy_continue_js.resx">
+      <DependentUpon>dibao_zy_continue_js.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dareway\JiNan\Dialog\PersonInfoDialog.resx">
+      <DependentUpon>PersonInfoDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiXiaDiBao\Dialog\frmCARD.resx">
+      <DependentUpon>frmCARD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiXiaDiBao\Dialog\frmJS.resx">
+      <DependentUpon>frmJS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiXiaDiBao\Dialog\frmPhoto.resx">
+      <DependentUpon>frmPhoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiXiaDiBao\Dialog\frmQXJS.resx">
+      <DependentUpon>frmQXJS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxSDACARDLib">
+      <Guid>{1685EEDD-F1BB-46D9-B2A8-70A0AD692170}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="SDACARDLib">
+      <Guid>{1685EEDD-F1BB-46D9-B2A8-70A0AD692170}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://172.16.203.100/WebServiceHOST/DiBaoWebService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebReferenceDiBao\</RelPath>
+      <UpdateFromURL>http://172.16.203.100/WebServiceHOST/DiBaoWebService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PayAPIInstance_WebReferenceDiBao_DiBaoWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

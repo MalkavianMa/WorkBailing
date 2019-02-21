@@ -30,6 +30,7 @@ namespace DW_YBBX
         public string zgtc_ID = ConfigurationManager.AppSettings["ZGTC_PATID"].ToString();
         public string ptmz_ID = ConfigurationManager.AppSettings["PTMZ_PATID"].ToString();
         public string zgmg_ID = ConfigurationManager.AppSettings["ZGMG_PATID"].ToString();
+        public string zgzy_ID = ConfigurationManager.AppSettings["ZGZY_PATID"].ToString();
         public string jmmg_ID = ConfigurationManager.AppSettings["JMMG_PATID"].ToString();
         public string mfyy_ID = ConfigurationManager.AppSettings["MFYY_PATID"].ToString();
         public string jmzy_ID = ConfigurationManager.AppSettings["JMZY_PATID"].ToString();
@@ -931,6 +932,182 @@ SELECT " + "'4'" + @" ,
 
 
         }
+        // string hosid, string p_xzbz, string p_sbjglx
+
+        /// <summary>
+        /// 获取中心自付比例center窗体用 校准自付比例用typeCheck=0
+        /// </summary>
+        /// <param name="p_sbjbm"></param>
+        /// <param name="p_yyxmbm"></param>
+        /// <param name="p_rq"></param>
+        /// <param name="hosid"></param>
+        /// <param name="p_xzbz"></param>
+        /// <param name="p_sbjglx"></param>
+        public void Down_Yyxm_ZFBL_ZGmg(string p_sbjbm, string p_yyxmbm, string p_rq, string hosid, string p_xzbz, string p_sbjglx,string typeCheck)
+        {
+
+            string iRe = seiproxy.ExeFuncReStr("get_zfbl", new object[] { p_sbjbm, p_yyxmbm, p_rq });
+            string memo = "";
+            //bl = GetReturnString("zfbl");
+            string zfbl = "100";
+            if (iRe == "0" || iRe == "")
+            {
+                zfbl = "0";
+            }
+            else
+            {
+                //a = iRe.Substring(0, iRe.IndexOf("#"));
+                var arr = iRe.Split('/');
+                if (arr.Length > 1)
+                {
+                    for (int i = 0; i < arr.Length; i++)
+                    {
+                        if (arr[i].Trim().Length == 0)
+                        {
+                            continue;
+                        }
+                        var tmpArr = arr[i].Split('#');
+                        //if (Convert.ToDecimal(tmpArr[0]) < Convert.ToDecimal(zfbl))
+                        //{
+                        //    zfbl = tmpArr[0];
+                        //    memo = tmpArr[1];
+                        //    if (memo.Length > 50)
+                        //    {
+                        //        memo.Substring(0, 45);
+                        //    }
+                        //}
+                        decimal jtmp0 = 0;
+                        if (decimal.TryParse(tmpArr[0], out jtmp0))
+                        {
+
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                        if (Convert.ToDecimal(tmpArr[0]) < Convert.ToDecimal(zfbl))
+                        {
+                            zfbl = tmpArr[0];
+                            memo = tmpArr[1];
+                            if (memo.Length > 25)
+                            {
+                                memo = memo.Substring(0, 25);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    var tmpArr = arr[0].Split('#');
+                    zfbl = tmpArr[0];
+                    if (tmpArr.Length > 1)
+                    {
+                        memo = tmpArr[1];
+                    }
+
+                }
+            }
+
+            if (memo.Length >= 20)
+            {
+                memo = memo.Substring(0, 20);
+            }
+
+            #region 删除插入 职工门规
+            string strDelete = @"DELETE FROM COMM.COMM.NETWORKING_ITEM_VS_HIS WHERE NETWORKING_PAT_CLASS_ID ='"+zgmg_ID+"' AND HOSPITAL_ID='" + MainForm.HOSPITAL_ID + "' AND NETWORK_ITEM_CODE='" + p_yyxmbm + @"'";
+            SqlHelper.ExecSqlReDs(strDelete.ToString());
+
+            string strInsert = @" INSERT INTO COMM.COMM.NETWORKING_ITEM_VS_HIS	
+            ( NETWORKING_PAT_CLASS_ID ,
+            ITEM_PROP ,
+          HIS_ITEM_CODE ,
+          HIS_ITEM_NAME ,
+          NETWORK_ITEM_CODE ,
+          NETWORK_ITEM_NAME ,
+          SELF_BURDEN_RATIO ,
+          MEMO ,
+          START_TIME ,
+          STOP_TIME ,
+          TYPE_MEMO ,
+          NETWORK_ITEM_PROP ,
+          NETWORK_ITEM_CHARGE_CLASS ,
+          HOSPITAL_ID ,
+          NETWORK_ITEM_PRICE ,
+          FLAG_DISABLED ,
+          NETWORK_ITEM_FLAG_UP
+        )
+SELECT " + "'"+ zgmg_ID + "'" + @" ,
+          ITEM_PROP ,
+          HIS_ITEM_CODE ,
+          HIS_ITEM_NAME ,
+          NETWORK_ITEM_CODE ,
+          NETWORK_ITEM_NAME ,
+          '" + zfbl + @"',
+          '" + memo + @"',
+          START_TIME ,
+          STOP_TIME ,
+          TYPE_MEMO ,
+          NETWORK_ITEM_PROP ,
+          NETWORK_ITEM_CHARGE_CLASS ,
+          '" + MainForm.HOSPITAL_ID + @"' ,
+          NETWORK_ITEM_PRICE ,
+          FLAG_DISABLED ,
+          NETWORK_ITEM_FLAG_UP
+          
+          FROM COMM.COMM.NETWORKING_ITEM_VS_HIS WHERE NETWORKING_PAT_CLASS_ID=" + ptmz_ID + @" AND HOSPITAL_ID='" + MainForm.HOSPITAL_ID + @"' AND 
+          NETWORK_ITEM_CODE='" + p_yyxmbm + @"'";
+            SqlHelper.ExecSqlReDs(strInsert.ToString());
+
+
+
+            #endregion
+            #region 职工住院
+            string strDeleteZY = @"DELETE FROM COMM.COMM.NETWORKING_ITEM_VS_HIS WHERE NETWORKING_PAT_CLASS_ID ='" + zgzy_ID + "' AND HOSPITAL_ID='" + MainForm.HOSPITAL_ID + "' AND NETWORK_ITEM_CODE='" + p_yyxmbm + @"'";
+            SqlHelper.ExecSqlReDs(strDeleteZY.ToString());
+
+            string strInsertZy = @" INSERT INTO COMM.COMM.NETWORKING_ITEM_VS_HIS	
+            ( NETWORKING_PAT_CLASS_ID ,
+            ITEM_PROP ,
+          HIS_ITEM_CODE ,
+          HIS_ITEM_NAME ,
+          NETWORK_ITEM_CODE ,
+          NETWORK_ITEM_NAME ,
+          SELF_BURDEN_RATIO ,
+          MEMO ,
+          START_TIME ,
+          STOP_TIME ,
+          TYPE_MEMO ,
+          NETWORK_ITEM_PROP ,
+          NETWORK_ITEM_CHARGE_CLASS ,
+          HOSPITAL_ID ,
+          NETWORK_ITEM_PRICE ,
+          FLAG_DISABLED ,
+          NETWORK_ITEM_FLAG_UP
+        )
+SELECT " + "'" + zgzy_ID + "'" + @" ,
+          ITEM_PROP ,
+          HIS_ITEM_CODE ,
+          HIS_ITEM_NAME ,
+          NETWORK_ITEM_CODE ,
+          NETWORK_ITEM_NAME ,
+          '" + zfbl + @"',
+          '" + memo + @"',
+          START_TIME ,
+          STOP_TIME ,
+          TYPE_MEMO ,
+          NETWORK_ITEM_PROP ,
+          NETWORK_ITEM_CHARGE_CLASS ,
+          '" + MainForm.HOSPITAL_ID + @"' ,
+          NETWORK_ITEM_PRICE ,
+          FLAG_DISABLED ,
+          NETWORK_ITEM_FLAG_UP
+          
+          FROM COMM.COMM.NETWORKING_ITEM_VS_HIS WHERE NETWORKING_PAT_CLASS_ID=" + ptmz_ID + @" AND HOSPITAL_ID='" + MainForm.HOSPITAL_ID + @"' AND 
+          NETWORK_ITEM_CODE='" + p_yyxmbm + @"'";
+            SqlHelper.ExecSqlReDs(strInsertZy.ToString());
+            #endregion
+
+        }
 
         #endregion
 
@@ -1201,6 +1378,8 @@ SELECT " + jmzy_ID + @" ,
 
             #endregion
 
+
+
             #region 居民免费用药更新
             string strDeleteMF = @"DELETE FROM COMM.COMM.NETWORKING_ITEM_VS_HIS WHERE NETWORKING_PAT_CLASS_ID ='" + mfyy_ID + "' AND HOSPITAL_ID='" + MainForm.HOSPITAL_ID + "' AND NETWORK_ITEM_CODE='" + p_yyxmbm + @"'";
             SqlHelper.ExecSqlReDs(strDeleteMF.ToString());
@@ -1250,22 +1429,7 @@ SELECT " + mfyy_ID + @" ,
             #endregion
 
 
-            #region 二次校准
 
-            string reStr = seiproxy.ExeFuncReStr("get_zfbl_xzbz_sbjglx", new object[] { p_sbjbm, p_yyxmbm, p_rq, p_xzbz, p_sbjglx });
-
-            decimal tSelf = 0;
-            if (decimal.TryParse(reStr, out tSelf))
-            {
-                string sqlUpdate = "  UPDATE  COMM.COMM.NETWORKING_ITEM_VS_HIS  SET SELF_BURDEN_RATIO='" + reStr + "' WHERE  HOSPITAL_ID='" + hosid + "' AND  NETWORK_ITEM_CODE='" + p_yyxmbm + "'" + "   AND NETWORKING_PAT_CLASS_ID='" + jmmg_ID + "'";
-                SqlHelper.ExecSqlReInt(sqlUpdate);
-            }
-            else
-            {
-
-            }
-
-            #endregion
 
             //MessageBox.Show("更新居民门规自负比例成功！");
         }
@@ -1327,6 +1491,7 @@ SELECT " + mfyy_ID + @" ,
             {
                 memo = memo.Substring(0, 20);
             }
+            #region 居民统筹
             string strDelete = @"DELETE FROM COMM.COMM.NETWORKING_ITEM_VS_HIS WHERE NETWORKING_PAT_CLASS_ID ='" + jmtc_patid + "' AND HOSPITAL_ID='" + hosid + "' AND NETWORK_ITEM_CODE='" + p_yyxmbm + @"'";
             SqlHelper.ExecSqlReDs(strDelete.ToString());
 
@@ -1369,21 +1534,27 @@ SELECT '" + jmtc_patid + @"' ,
           
           FROM COMM.COMM.NETWORKING_ITEM_VS_HIS WHERE NETWORKING_PAT_CLASS_ID=" + ConfigurationManager.AppSettings["PTMZ_PATID"].ToString() + @" AND HOSPITAL_ID='" + hosid + @"' AND 
           NETWORK_ITEM_CODE='" + p_yyxmbm + @"'";
-            SqlHelper.ExecSqlReDs(strInsert.ToString());
+            SqlHelper.ExecSqlReDs(strInsert.ToString()); 
+            #endregion
             #endregion
 
             //住院葛根素  天麻素
             //门诊的葡萄糖
 
-            #region 获取自付比例校准 循环
-            GetZfCheck(p_sbjbm, p_yyxmbm, p_rq, jmtc_patid, hosid, p_xzbz, p_sbjglx);
 
-
-
-
-            #endregion
         }
 
+
+        /// <summary>
+        /// 获取自付比例校准 循环
+        /// </summary>
+        /// <param name="p_sbjbm"></param>
+        /// <param name="p_yyxmbm"></param>
+        /// <param name="p_rq"></param>
+        /// <param name="tc_patid"></param>
+        /// <param name="hosid"></param>
+        /// <param name="p_xzbz"></param>
+        /// <param name="p_sbjglx"></param>
         private void GetZfCheck(string p_sbjbm, string p_yyxmbm, string p_rq, string tc_patid, string hosid, string p_xzbz, string p_sbjglx)
         {
             string reStr = seiproxy.ExeFuncReStr("get_zfbl_xzbz_sbjglx", new object[] { p_sbjbm, p_yyxmbm, p_rq, p_xzbz, p_sbjglx });
@@ -1571,6 +1742,7 @@ SELECT '" + jmtc_patid + @"' ,
                 memo = memo.Substring(0, 20);
             }
 
+            #region 职工统筹
             string strDelete = @"DELETE FROM COMM.COMM.NETWORKING_ITEM_VS_HIS WHERE NETWORKING_PAT_CLASS_ID ='" + zgtc_ID + "' AND HOSPITAL_ID='" + MainForm.HOSPITAL_ID + "' AND NETWORK_ITEM_CODE='" + p_yyxmbm + @"'";
             SqlHelper.ExecSqlReDs(strDelete.ToString());
 
@@ -1613,7 +1785,8 @@ SELECT   " + zgtc_ID + @"  ,
           
           FROM COMM.COMM.NETWORKING_ITEM_VS_HIS WHERE NETWORKING_PAT_CLASS_ID=" + ptmz_ID + "  AND HOSPITAL_ID='" + MainForm.HOSPITAL_ID + @"'  AND 
           NETWORK_ITEM_CODE='" + p_yyxmbm + @"'";
-            SqlHelper.ExecSqlReDs(strInsert.ToString());
+            SqlHelper.ExecSqlReDs(strInsert.ToString()); 
+            #endregion
 
             //MessageBox.Show("更新职工统筹自负比例成功！");
         }

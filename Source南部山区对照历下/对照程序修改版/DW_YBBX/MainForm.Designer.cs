@@ -33,11 +33,13 @@
             this.中心业务ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.目录下载ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.医保上传ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.中心上传下载更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.数据维护ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.目录对照ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.特殊处理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.自付比例修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.添加项目ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.价格更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.门诊业务ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.门诊报销ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.门诊报销查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +50,7 @@
             this.权限分配ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tclContents = new System.Windows.Forms.TabControl();
             this.label_xx = new System.Windows.Forms.Label();
-            this.价格更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.病案首页上传ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +75,8 @@
             this.中心业务ToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.中心业务ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.目录下载ToolStripMenuItem,
-            this.医保上传ToolStripMenuItem});
+            this.医保上传ToolStripMenuItem,
+            this.中心上传下载更新ToolStripMenuItem});
             this.中心业务ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.中心业务ToolStripMenuItem.Name = "中心业务ToolStripMenuItem";
             this.中心业务ToolStripMenuItem.Size = new System.Drawing.Size(86, 26);
@@ -82,17 +85,24 @@
             // 目录下载ToolStripMenuItem
             // 
             this.目录下载ToolStripMenuItem.Name = "目录下载ToolStripMenuItem";
-            this.目录下载ToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.目录下载ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.目录下载ToolStripMenuItem.Text = "目录下载";
             this.目录下载ToolStripMenuItem.Click += new System.EventHandler(this.Menu_Click);
             // 
             // 医保上传ToolStripMenuItem
             // 
             this.医保上传ToolStripMenuItem.Name = "医保上传ToolStripMenuItem";
-            this.医保上传ToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.医保上传ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.医保上传ToolStripMenuItem.Text = "医保上传";
             this.医保上传ToolStripMenuItem.Visible = false;
             this.医保上传ToolStripMenuItem.Click += new System.EventHandler(this.Menu_Click);
+            // 
+            // 中心上传下载更新ToolStripMenuItem
+            // 
+            this.中心上传下载更新ToolStripMenuItem.Name = "中心上传下载更新ToolStripMenuItem";
+            this.中心上传下载更新ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.中心上传下载更新ToolStripMenuItem.Text = "下载更新";
+            this.中心上传下载更新ToolStripMenuItem.Click += new System.EventHandler(this.中心上传下载更新ToolStripMenuItem_Click);
             // 
             // 数据维护ToolStripMenuItem
             // 
@@ -101,7 +111,8 @@
             this.特殊处理ToolStripMenuItem,
             this.自付比例修改ToolStripMenuItem,
             this.添加项目ToolStripMenuItem,
-            this.价格更新ToolStripMenuItem});
+            this.价格更新ToolStripMenuItem,
+            this.病案首页上传ToolStripMenuItem});
             this.数据维护ToolStripMenuItem.Name = "数据维护ToolStripMenuItem";
             this.数据维护ToolStripMenuItem.Size = new System.Drawing.Size(86, 26);
             this.数据维护ToolStripMenuItem.Text = "数据维护";
@@ -109,7 +120,7 @@
             // 目录对照ToolStripMenuItem
             // 
             this.目录对照ToolStripMenuItem.Name = "目录对照ToolStripMenuItem";
-            this.目录对照ToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.目录对照ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.目录对照ToolStripMenuItem.Text = "目录对照";
             this.目录对照ToolStripMenuItem.Visible = false;
             this.目录对照ToolStripMenuItem.Click += new System.EventHandler(this.Menu_Click);
@@ -117,7 +128,7 @@
             // 特殊处理ToolStripMenuItem
             // 
             this.特殊处理ToolStripMenuItem.Name = "特殊处理ToolStripMenuItem";
-            this.特殊处理ToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.特殊处理ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.特殊处理ToolStripMenuItem.Text = "特殊处理";
             this.特殊处理ToolStripMenuItem.Visible = false;
             this.特殊处理ToolStripMenuItem.Click += new System.EventHandler(this.Menu_Click);
@@ -125,17 +136,24 @@
             // 自付比例修改ToolStripMenuItem
             // 
             this.自付比例修改ToolStripMenuItem.Name = "自付比例修改ToolStripMenuItem";
-            this.自付比例修改ToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.自付比例修改ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.自付比例修改ToolStripMenuItem.Text = "自付比例修改";
             this.自付比例修改ToolStripMenuItem.Click += new System.EventHandler(this.自付比例修改ToolStripMenuItem_Click);
             // 
             // 添加项目ToolStripMenuItem
             // 
             this.添加项目ToolStripMenuItem.Name = "添加项目ToolStripMenuItem";
-            this.添加项目ToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.添加项目ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.添加项目ToolStripMenuItem.Text = "添加项目";
             this.添加项目ToolStripMenuItem.Visible = false;
             this.添加项目ToolStripMenuItem.Click += new System.EventHandler(this.添加项目ToolStripMenuItem_Click);
+            // 
+            // 价格更新ToolStripMenuItem
+            // 
+            this.价格更新ToolStripMenuItem.Name = "价格更新ToolStripMenuItem";
+            this.价格更新ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.价格更新ToolStripMenuItem.Text = "价格更新";
+            this.价格更新ToolStripMenuItem.Click += new System.EventHandler(this.价格更新ToolStripMenuItem_Click);
             // 
             // 门诊业务ToolStripMenuItem
             // 
@@ -230,12 +248,12 @@
             this.label_xx.TabIndex = 3;
             this.label_xx.Text = "shijian";
             // 
-            // 价格更新ToolStripMenuItem
+            // 病案首页上传ToolStripMenuItem
             // 
-            this.价格更新ToolStripMenuItem.Name = "价格更新ToolStripMenuItem";
-            this.价格更新ToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
-            this.价格更新ToolStripMenuItem.Text = "价格更新";
-            this.价格更新ToolStripMenuItem.Click += new System.EventHandler(this.价格更新ToolStripMenuItem_Click);
+            this.病案首页上传ToolStripMenuItem.Name = "病案首页上传ToolStripMenuItem";
+            this.病案首页上传ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.病案首页上传ToolStripMenuItem.Text = "病案首页上传";
+            this.病案首页上传ToolStripMenuItem.Click += new System.EventHandler(this.病案首页上传ToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -286,6 +304,8 @@
         private System.Windows.Forms.ToolStripMenuItem 自付比例修改ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 添加项目ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 价格更新ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 中心上传下载更新ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 病案首页上传ToolStripMenuItem;
     }
 }
 

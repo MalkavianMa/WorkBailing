@@ -1,0 +1,888 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PayAPIUtilities</name>
+    </assembly>
+    <members>
+        <member name="T:PayAPIUtilities.Config.IniFile">
+            <summary>
+            配置文件读取类
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Config.IniFile.path">
+            <summary>
+            路径
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.Config.IniFile.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="INIPath"></param>
+        </member>
+        <member name="M:PayAPIUtilities.Config.IniFile.IniWriteValue(System.String,System.String,System.String)">
+            <summary>
+            写INI文件
+            </summary>
+            <param name="Section"></param>
+            <param name="Key"></param>
+            <param name="Value"></param>
+        </member>
+        <member name="M:PayAPIUtilities.Config.IniFile.IniReadValue(System.String,System.String)">
+            <summary>
+            读取配置
+            </summary>
+            <param name="Section"></param>
+            <param name="Key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIUtilities.Config.IniFile.IniReadValue(System.String,System.String,System.String)">
+            <summary>
+            读取配置
+            </summary>
+            <param name="Section"></param>
+            <param name="Key"></param>
+            <param name="DefaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PayAPIUtilities.Config.PayAPIConfig">
+            <summary>
+            配置信息
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.Config.PayAPIConfig.#cctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.Config.PayAPIConfig.LoadConifg">
+            <summary>
+            加载配置
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Config.PayAPIConfig.currentPath">
+            <summary>
+            当前程序路径
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.Config.PayAPIConfig.CurrentPath">
+            <summary>
+            当前程序路径
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Config.PayAPIConfig.workstationId">
+            <summary>
+            工作站ID
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.Config.PayAPIConfig.WorkstationId">
+            <summary>
+            工作站ID
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Config.PayAPIConfig.debugMode">
+            <summary>
+            调试模式
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.Config.PayAPIConfig.DebugMode">
+            <summary>
+            调试模式
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Config.PayAPIConfig.serviceUrl">
+            <summary>
+            服务URL
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.Config.PayAPIConfig.ServiceUrl">
+            <summary>
+            服务地址
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.Config.PayAPIConfig.Operator">
+            <summary>
+            用户信息
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.Config.PayAPIConfig.InstitutionDict">
+            <summary>
+            机构信息字典
+            </summary>
+        </member>
+        <member name="T:PayAPIUtilities.Exceptions.AbstractException.AbstractInterfaceException">
+            <summary>
+            所有调用接口产生的异常继承此异常来实现
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.Exceptions.AbstractException.AbstractInterfaceException.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:PayAPIUtilities.Exceptions.AbstractException.AbstractPayCheckErrorException">
+            <summary>
+            所有的对账不符，核对支付不符等对账出现问题的异常继承此异常来实现。
+            </summary>
+        </member>
+        <member name="T:PayAPIUtilities.Exceptions.AbstractException.AbstractReturnInfoErrorException">
+            <summary>
+            接口返回异常信息后所使用的异常继承此抽象类来实现
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.Exceptions.AbstractException.AbstractReturnInfoErrorException.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:PayAPIUtilities.Exceptions.UserException.OperateErrorException">
+            <summary>
+            用户操作异常
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.Exceptions.UserException.OperateErrorException.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:PayAPIUtilities.Exceptions.UserException.ReadCardErrorException">
+            <summary>
+            读卡错误异常
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.Exceptions.UserException.ReadCardErrorException.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:PayAPIUtilities.Exceptions.UserException.ServiceErrorException">
+            <summary>
+            服务调用异常
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.Exceptions.UserException.ServiceErrorException.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:PayAPIUtilities.Exceptions.UserException.InterfaceErrorException">
+            <summary>
+            第三方结算异常
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.Exceptions.UserException.InterfaceErrorException.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:PayAPIUtilities.Exceptions.UserException.SettleErrorException">
+            <summary>
+            第三方结算异常
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.Exceptions.UserException.SettleErrorException.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:PayAPIUtilities.Log.LogManager">
+            <summary>
+            可向服务器存储日志方法
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.LogManager.logPath">
+            <summary>
+            日志路径 
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.LogManager.thread">
+            <summary>
+            日志处理线程
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.LogManager.isInit">
+            <summary>
+            初始化标识
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.LogManager.cacheQueue">
+            <summary>
+            缓存
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.LogManager.mainQueue">
+            <summary>
+            写日志主队列
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.LogManager.pause">
+            <summary>
+            日志信号量
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.LogManager.queueLock">
+            <summary>
+            锁定对象
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.LogManager.writeLock">
+            <summary>
+            锁定对象
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.LogManager.objWriteFileLock">
+            <summary>
+            写文件锁定对象
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.Log.LogManager.Initial">
+            <summary>
+            初始化函数
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.Log.LogManager.Process">
+            <summary>
+            处理消息
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.Log.LogManager.RecordOperateLog(PayAPIUtilities.Log.Message)">
+            <summary>
+            保存记录日志
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.Log.LogManager.LogAction(PayAPIUtilities.Log.LogLevel,System.Object,System.Exception)">
+            <summary>
+            日志处理
+            </summary> 
+            <param name="type"></param>
+            <param name="msg"></param>
+            <param name="ex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIUtilities.Log.LogManager.Warn(System.Object,System.Exception)">
+            <summary>
+            警告
+            </summary>
+            <param name="message"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:PayAPIUtilities.Log.LogManager.Error(System.Object,System.Exception)">
+            <summary>
+            记录错误
+            </summary>
+            <param name="message"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:PayAPIUtilities.Log.LogManager.Debug(System.Object,System.Exception)">
+            <summary>
+            记录调试
+            </summary>
+            <param name="message"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:PayAPIUtilities.Log.LogManager.Info(System.Object,System.Exception)">
+            <summary>
+            记录信息
+            </summary>
+            <param name="message"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:PayAPIUtilities.Log.LogManager.GetExceptionInfo(System.Exception)">
+            <summary>
+            获取错误日志
+            </summary>
+            <param name="ex"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PayAPIUtilities.Log.LogLevel">
+            <summary>
+            日志级别
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.LogLevel.None">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.LogLevel.Debug">
+            <summary>
+            调试
+            </summary> 
+        </member>
+        <member name="F:PayAPIUtilities.Log.LogLevel.Info">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.LogLevel.Warn">
+            <summary>
+            警告
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.LogLevel.Error">
+            <summary>
+            错误
+            </summary>
+        </member>
+        <member name="T:PayAPIUtilities.Log.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.Message.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.Message.LogType">
+            <summary> 
+            日志类型
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.Message.Content">
+            <summary>
+            日志内容
+            </summary>
+        </member>
+        <member name="T:PayAPIUtilities.Log.LogParams">
+            <summary>
+            日志参数
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.Log.LogParams.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.LogParams.ExceptionInfo">
+            <summary>
+            异常信息
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.LogParams.Level">
+            <summary>
+            日志级别
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.LogParams.Message">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.Log.LogParams.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:PayAPIUtilities.StringTools.StringHelper">
+            <summary>
+            字符串帮助类
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.StringTools.StringHelper.c_HexCharList">
+            <summary>
+            16进制字符
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.StringTools.StringHelper.c_Base64CharList">
+            <summary>
+            BASE64字符
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.StringTools.StringHelper.StartPunctuaction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.StringTools.StringHelper.EndPunctuaction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.StringTools.StringHelper.GetStrJoinFromList(System.Collections.Generic.IList{System.Decimal},System.String)">
+            <summary>
+            获取使用指定连接符连接list的字符串
+            </summary>
+            <param name="list">要连接的内容 里面的item使用tostring方法获取字符串</param>
+            <param name="joiner">连接符</param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIUtilities.StringTools.StringHelper.GetStrJoinFromList(System.Decimal[],System.String)">
+            <summary>
+            获取使用指定连接符连接list的字符串
+            </summary>
+            <param name="list">要连接的内容 里面的item使用tostring方法获取字符串</param>
+            <param name="joiner">连接符</param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIUtilities.StringTools.StringHelper.GetStrJoinFromList(System.Collections.Generic.IList{System.Int32},System.String)">
+            <summary>
+            获取使用指定连接符连接list的字符串
+            </summary>
+            <param name="list">要连接的内容 里面的item使用tostring方法获取字符串</param>
+            <param name="joiner">连接符</param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIUtilities.StringTools.StringHelper.GetStrJoinFromList(System.Collections.Generic.IList{System.String},System.String,System.Boolean)">
+            <summary>
+            获取使用指定连接符连接list的字符串
+            </summary>
+            <param name="list">要连接的内容 里面的item使用tostring方法获取字符串</param>
+            <param name="joiner">连接符</param>
+            <param name="isInSqlStr">是否是在sql语句中，如果为true 则每个字符串使用''包含</param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIUtilities.StringTools.StringHelper.GetListFromStrJoin(System.String,System.Char)">
+            <summary>
+            获取由指定连接符连接的字符串分隔转换成的ILIST列表
+            </summary>
+            <param name="strSource">需要分隔转换的字符串</param>
+            <param name="joiner">连接符</param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIUtilities.StringTools.StringHelper.GetDecimalListFromStrJoin(System.String,System.Char)">
+            <summary>
+            获取由指定连接符连接的字符串分隔转换成的ILIST列表
+            </summary>
+            <param name="strSource">需要分隔转换的字符串</param>
+            <param name="joiner">连接符</param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIUtilities.StringTools.StringHelper.GetStrJoinSingleQuotesFromStr(System.String,System.Char)">
+            <summary>
+            将传入的字符串以特定字符分隔后，添加单引号后拼接返回
+            </summary>
+            <param name="SourceStr"></param>
+            <param name="Joiner"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIUtilities.StringTools.StringHelper.GetSymbolSplitLevel(System.Char)">
+            <summary>
+            
+            </summary>
+            <param name="vSymbol"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIUtilities.StringTools.StringHelper.LoadAnsiFile(System.String)">
+            <summary>
+            使用GB2312编码格式读取一个文本文件的内容
+            </summary>
+            <param name="strFile">文件名</param>
+            <returns>读取的文件内容，若文件不存在或发生错误则返回空引用</returns>
+        </member>
+        <member name="M:PayAPIUtilities.StringTools.StringHelper.SplistString(System.String,System.Char)">
+            <summary>
+            根据一个分隔字符拆分一个字符串
+            </summary>
+            <param name="strText">要拆分的字符串</param>
+            <param name="Spliter">分隔字符</param>
+            <returns>两个元素的字符串数组,分别是原始字符串中分隔字符前面的部分和后面的部分,若参数不正确则返回空引用
+            若没找到分隔字符则第一个元素为原始字符串,第二个为无内容的字符串</returns>
+        </member>
+        <member name="M:PayAPIUtilities.StringTools.StringHelper.SplistString(System.String,System.String)">
+            <summary>
+            根据一个分隔字符串拆分一个字符串
+            </summary>
+            <param name="strText">要拆分的字符串</param>
+            <param name="strSpliter">分隔字符串</param>
+            <returns>两个元素的字符串数组,分别是原始字符串中分隔字符串前面的部分和后面的部分,若参数不正确则返回空引用
+            若没找到分隔字符串则第一个元素为原始字符串,第二个为无内容的字符串</returns>
+        </member>
+        <member name="M:PayAPIUtilities.StringTools.StringHelper.CombinStringArray(System.String[],System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strItems"></param>
+            <param name="strItemSplit"></param>
+            <param name="strValueSplit"></param>
+            <returns></returns>
+        </member>
+        <member name="F:PayAPIUtilities.StringTools.StringHelper.strChineseFirstPY">
+            <summary>
+            汉字拼音首字母列表 本列表包含了20902个汉字,用于配合 GetChineseSpell 函数使用,本表收录的字符的Unicode编码范围为19968至40869
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.StringTools.StringHelper.GetChineseUpperSpell(System.String)">
+            <summary>
+            获得一个字符串的大写汉语拼音码
+            </summary>
+            <param name="strText">字符串</param>
+            <returns>汉语拼音码,该字符串只包含大写的英文字母</returns>
+        </member>
+        <member name="M:PayAPIUtilities.StringTools.StringHelper.GetChineseLowerSpell(System.String)">
+            <summary>
+            获得一个字符串的小写写汉语拼音码
+            </summary>
+            <param name="strText">字符串</param>
+            <returns>汉语拼音码,该字符串只包含小写写的英文字母</returns>
+        </member>
+        <member name="M:PayAPIUtilities.StringTools.StringHelper.ClearWhiteSpace(System.String,System.Int32,System.Boolean)">
+            <summary>
+            清除一个字符串中的空白字符
+            </summary>
+            <param name="strText">原始字符串</param>
+            <param name="intMaxLength">输出结果的最长长度,为0表示无限制</param>
+            <param name="bolHtml">是否模仿HTML对空白字符的处理</param>
+            <returns>没有空白字符的字符串</returns>
+        </member>
+        <member name="T:PayAPIUtilities.Tools.GroupConditon">
+            <summary>
+            分组条件
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.Tools.GroupConditon.ChargeId">
+            <summary>
+            费用ID
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.Tools.GroupConditon.Price">
+            <summary>
+            价格
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.Tools.GroupConditon.NetworkItemCode">
+            <summary>
+            联网项目编码
+            </summary>
+        </member>
+        <member name="T:PayAPIUtilities.Tools.CommonTools">
+            <summary>
+            通用组件工具类
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.Tools.CommonTools.GetGroupList(System.Collections.Generic.List{PayAPIInterface.Model.In.InNetworkUpDetail})">
+            <summary>
+            获取费用明细汇总数据
+            </summary> 
+            <returns></returns>
+        </member>
+        <member name="T:PayAPIUtilities.Tools.CommonTools.DelegateOperate`1">
+            <summary>
+            委托函数
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIUtilities.Tools.CommonTools.ExecByRepeat``1(PayAPIUtilities.Tools.CommonTools.DelegateOperate{``0},``0)">
+            <summary>
+            失败重复执行
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="para"></param>
+            <param name="operate"></param>
+        </member>
+        <member name="T:PayAPIUtilities.Tools.CommonTools.DelegateVoidOperate`1">
+            <summary>
+            返回为空的委托函数
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIUtilities.Tools.CommonTools.ExecRepeatVoidMethod``1(PayAPIUtilities.Tools.CommonTools.DelegateVoidOperate{``0},``0)">
+            <summary>
+            重复执行返回空函数
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="para"></param>
+            <param name="operate"></param>
+        </member>
+        <member name="T:PayAPIUtilities.WebAPI.CommMessage">
+            <summary>
+            通过webAPI进行HHttpJson调用的通用消息类，封装后可以进行通用通讯和处理
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.WebAPI.CommMessage.MessageName">
+            <summary>
+            获取或者设置消息名称
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.WebAPI.CommMessage.MessageType">
+            <summary>
+            获取或设置消息类型
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.WebAPI.CommMessage.Memo">
+            <summary>
+            获取或设置消息备注
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.WebAPI.CommMessage.Content">
+            <summary>
+            获取或设置内容串
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.WebAPI.CommMessage.#ctor(System.String,System.String,System.String,System.Object)">
+            <summary>
+            构造消息类
+            </summary>
+            <param name="messageName">消息名称</param>
+            <param name="messageType">消息类型</param>
+            <param name="memo">消息备注</param>
+            <param name="contentobj">发送的实体类</param>
+        </member>
+        <member name="M:PayAPIUtilities.WebAPI.CommMessage.GetContentInstance``1">
+            <summary>
+            从内容转换实体类
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIUtilities.WebAPI.CommMessage.GetInstanceFromJson``1(System.String)">
+            <summary>
+            从JSON串转换成实体类
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PayAPIUtilities.WebAPI.HttpJsonHelper">
+            <summary>
+            HttpJson帮助工具类
+            </summary>
+        </member>
+        <member name="T:PayAPIUtilities.WebAPI.RequestMethod">
+            <summary>
+            请求方法
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.WebAPI.RequestMethod.Get">
+            <summary>
+            GET方法
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.WebAPI.RequestMethod.Post">
+            <summary>
+            POST方法
+            </summary>
+        </member>
+        <member name="T:PayAPIUtilities.WebAPI.RequestContentType">
+            <summary>
+            请求内容类型
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.WebAPI.RequestContentType.Json">
+            <summary>
+            JSON
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.WebAPI.RequestContentType.Form">
+            <summary>
+            表单
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.WebAPI.RequestContentType.xml">
+            <summary>
+            XML
+            </summary>
+        </member>
+        <member name="T:PayAPIUtilities.WebAPI.HttpWebRequestHelper">
+            <summary>
+            web请求调用工具类
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.WebAPI.HttpWebRequestHelper.request">
+            <summary>
+            request主体
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.WebAPI.HttpWebRequestHelper.response">
+            <summary>
+            发送数据后返回的response
+            </summary>
+        </member>
+        <member name="F:PayAPIUtilities.WebAPI.HttpWebRequestHelper.requestbody">
+            <summary>
+            发送的post数据字符
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.WebAPI.HttpWebRequestHelper.Response">
+            <summary>
+            获取发送数据后返回的response
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.WebAPI.HttpWebRequestHelper.RequestBody">
+            <summary>
+            获取或设置提交数据串
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.WebAPI.HttpWebRequestHelper.URL">
+            <summary>
+            获取或设置访问地址
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.WebAPI.HttpWebRequestHelper.Method">
+            <summary>
+            获取或设置访问方法
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.WebAPI.HttpWebRequestHelper.Encoding">
+            <summary>
+            获取或设置编码类型
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.WebAPI.HttpWebRequestHelper.ResponseEncoding">
+            <summary>
+            获取或设置返回数据编码类型
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.WebAPI.HttpWebRequestHelper.RequestContentTypeString">
+            <summary>
+            get or set reuqest's contenttype
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.WebAPI.HttpWebRequestHelper.Timeout">
+            <summary>
+            获取或设置过期时间 
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.WebAPI.HttpWebRequestHelper.init">
+            <summary>
+            init
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.WebAPI.HttpWebRequestHelper.#ctor(System.String)">
+            <summary>
+            构造一个HttpWebRequestHelper类
+            </summary>
+            <param name="url">访问目标的地址</param>
+        </member>
+        <member name="M:PayAPIUtilities.WebAPI.HttpWebRequestHelper.SetRequestContentType(PayAPIUtilities.WebAPI.RequestContentType)">
+            <summary>
+            设置request的contentType
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="M:PayAPIUtilities.WebAPI.HttpWebRequestHelper.Send">
+            <summary>
+            发送数据反悔结果 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIUtilities.WebAPI.HttpWebRequestHelper.Send(System.String)">
+            <summary>
+            将制定的发送请求发送给服务器
+            </summary>
+            <param name="requestBody">发送请求</param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIUtilities.WebAPI.HttpWebRequestHelper.Send(System.Object)">
+            <summary>
+            将对象通过json序列化后发送
+            </summary>
+            <param name="o">要发送的对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIUtilities.WebAPI.HttpWebRequestHelper.Send``1(System.Object)">
+            <summary>
+            将对象通过json序列化后发送并返回对象
+            </summary>
+            <typeparam name="T">要返回的对象类型</typeparam>
+            <param name="o">要发送的对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIUtilities.WebAPI.HttpWebRequestHelper.Send``1(System.String)">
+            <summary>
+            将对象通过json发送并返回对象
+            </summary>
+            <typeparam name="T">要返回的对象类型</typeparam>
+            <param name="jsonstr">要发送的对象的序列化json串</param>
+            <returns></returns>
+        </member>
+        <member name="T:PayAPIUtilities.WebAPI.JsonHelper">
+            <summary>
+            Json帮助类
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.WebAPI.JsonHelper.SerializeObject(System.Object)">
+            <summary>
+            将对象序列化为JSON格式
+            </summary>
+            <param name="o">对象</param>
+            <returns>json字符串</returns>
+        </member>
+        <member name="M:PayAPIUtilities.WebAPI.JsonHelper.DeserializeJsonToObject``1(System.String)">
+            <summary>
+            解析JSON字符串生成对象实体
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="json">json字符串(eg.{"ID":"112","Name":"石子儿"})</param>
+            <returns>对象实体</returns>
+        </member>
+        <member name="M:PayAPIUtilities.WebAPI.JsonHelper.DeserializeJsonToList``1(System.String)">
+            <summary>
+            解析JSON数组生成对象实体集合
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="json">json数组字符串(eg.[{"ID":"112","Name":"石子儿"}])</param>
+            <returns>对象实体集合</returns>
+        </member>
+        <member name="M:PayAPIUtilities.WebAPI.JsonHelper.DeserializeAnonymousType``1(System.String,``0)">
+            <summary>
+            反序列化JSON到给定的匿名对象.
+            </summary>
+            <typeparam name="T">匿名对象类型</typeparam>
+            <param name="json">json字符串</param>
+            <param name="anonymousTypeObject">匿名对象</param>
+            <returns>匿名对象</returns>
+        </member>
+        <member name="T:PayAPIUtilities.WebAPI.JsonTest">
+            <summary>
+            Json测试
+            </summary>
+        </member>
+        <member name="M:PayAPIUtilities.WebAPI.JsonTest.Run">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PayAPIUtilities.WebAPI.Student">
+            <summary>
+            学生信息实体
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.WebAPI.Student.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.WebAPI.Student.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.WebAPI.Student.NickName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.WebAPI.Student.Class">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PayAPIUtilities.WebAPI.Class">
+            <summary>
+            学生班级实体
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.WebAPI.Class.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PayAPIUtilities.WebAPI.Class.Name">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

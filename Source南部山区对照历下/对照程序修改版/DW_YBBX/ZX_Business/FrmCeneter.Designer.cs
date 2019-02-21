@@ -34,13 +34,7 @@
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton5 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton6 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton9 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton10 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton11 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton12 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton14 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton15 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton16 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.button1 = new System.Windows.Forms.Button();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -128,50 +122,6 @@
             this.materialRaisedButton6.UseVisualStyleBackColor = true;
             this.materialRaisedButton6.Click += new System.EventHandler(this.materialRaisedButton6_Click);
             // 
-            // materialRaisedButton9
-            // 
-            this.materialRaisedButton9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton9.Depth = 0;
-            this.materialRaisedButton9.Icon = null;
-            this.materialRaisedButton9.Location = new System.Drawing.Point(366, 355);
-            this.materialRaisedButton9.MouseState = MaterialSkin.MouseState.Hover;
-            this.materialRaisedButton9.Name = "materialRaisedButton9";
-            this.materialRaisedButton9.Primary = true;
-            this.materialRaisedButton9.Size = new System.Drawing.Size(333, 29);
-            this.materialRaisedButton9.TabIndex = 15;
-            this.materialRaisedButton9.Text = "materialRaisedButton9";
-            this.materialRaisedButton9.UseVisualStyleBackColor = true;
-            // 
-            // materialRaisedButton10
-            // 
-            this.materialRaisedButton10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton10.Depth = 0;
-            this.materialRaisedButton10.Icon = null;
-            this.materialRaisedButton10.Location = new System.Drawing.Point(366, 297);
-            this.materialRaisedButton10.MouseState = MaterialSkin.MouseState.Hover;
-            this.materialRaisedButton10.Name = "materialRaisedButton10";
-            this.materialRaisedButton10.Primary = true;
-            this.materialRaisedButton10.Size = new System.Drawing.Size(333, 29);
-            this.materialRaisedButton10.TabIndex = 14;
-            this.materialRaisedButton10.Text = "materialRaisedButton10";
-            this.materialRaisedButton10.UseVisualStyleBackColor = true;
-            this.materialRaisedButton10.Click += new System.EventHandler(this.materialRaisedButton10_Click);
-            // 
-            // materialRaisedButton11
-            // 
-            this.materialRaisedButton11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton11.Depth = 0;
-            this.materialRaisedButton11.ForeColor = System.Drawing.Color.Red;
-            this.materialRaisedButton11.Icon = null;
-            this.materialRaisedButton11.Location = new System.Drawing.Point(366, 239);
-            this.materialRaisedButton11.MouseState = MaterialSkin.MouseState.Hover;
-            this.materialRaisedButton11.Name = "materialRaisedButton11";
-            this.materialRaisedButton11.Primary = true;
-            this.materialRaisedButton11.Size = new System.Drawing.Size(333, 29);
-            this.materialRaisedButton11.TabIndex = 13;
-            this.materialRaisedButton11.Text = "居民";
-            this.materialRaisedButton11.UseVisualStyleBackColor = true;
-            // 
             // materialRaisedButton12
             // 
             this.materialRaisedButton12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -183,53 +133,9 @@
             this.materialRaisedButton12.Primary = true;
             this.materialRaisedButton12.Size = new System.Drawing.Size(333, 29);
             this.materialRaisedButton12.TabIndex = 12;
-            this.materialRaisedButton12.Text = "八、居民免费用药/门规/住院更新";
+            this.materialRaisedButton12.Text = "八、免费用药/门规/住院更新";
             this.materialRaisedButton12.UseVisualStyleBackColor = true;
             this.materialRaisedButton12.Click += new System.EventHandler(this.materialRaisedButton12_Click);
-            // 
-            // materialRaisedButton14
-            // 
-            this.materialRaisedButton14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton14.Depth = 0;
-            this.materialRaisedButton14.Icon = null;
-            this.materialRaisedButton14.Location = new System.Drawing.Point(12, 355);
-            this.materialRaisedButton14.MouseState = MaterialSkin.MouseState.Hover;
-            this.materialRaisedButton14.Name = "materialRaisedButton14";
-            this.materialRaisedButton14.Primary = true;
-            this.materialRaisedButton14.Size = new System.Drawing.Size(333, 29);
-            this.materialRaisedButton14.TabIndex = 10;
-            this.materialRaisedButton14.Text = "materialRaisedButton14";
-            this.materialRaisedButton14.UseVisualStyleBackColor = true;
-            // 
-            // materialRaisedButton15
-            // 
-            this.materialRaisedButton15.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton15.Depth = 0;
-            this.materialRaisedButton15.ForeColor = System.Drawing.Color.Maroon;
-            this.materialRaisedButton15.Icon = null;
-            this.materialRaisedButton15.Location = new System.Drawing.Point(12, 297);
-            this.materialRaisedButton15.MouseState = MaterialSkin.MouseState.Hover;
-            this.materialRaisedButton15.Name = "materialRaisedButton15";
-            this.materialRaisedButton15.Primary = true;
-            this.materialRaisedButton15.Size = new System.Drawing.Size(333, 29);
-            this.materialRaisedButton15.TabIndex = 9;
-            this.materialRaisedButton15.Text = "materialRaisedButton15";
-            this.materialRaisedButton15.UseVisualStyleBackColor = true;
-            // 
-            // materialRaisedButton16
-            // 
-            this.materialRaisedButton16.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton16.Depth = 0;
-            this.materialRaisedButton16.Icon = null;
-            this.materialRaisedButton16.Location = new System.Drawing.Point(12, 239);
-            this.materialRaisedButton16.MouseState = MaterialSkin.MouseState.Hover;
-            this.materialRaisedButton16.Name = "materialRaisedButton16";
-            this.materialRaisedButton16.Primary = true;
-            this.materialRaisedButton16.Size = new System.Drawing.Size(333, 29);
-            this.materialRaisedButton16.TabIndex = 8;
-            this.materialRaisedButton16.Text = "免费用药更新";
-            this.materialRaisedButton16.UseVisualStyleBackColor = true;
-            this.materialRaisedButton16.Click += new System.EventHandler(this.materialRaisedButton16_Click);
             // 
             // button1
             // 
@@ -250,7 +156,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Nazanintar", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(38, 20);
+            this.materialLabel1.Location = new System.Drawing.Point(37, 350);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.Hover;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(77, 23);
@@ -265,11 +171,11 @@
             this.comboBox1.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.comboBox1.Location = new System.Drawing.Point(121, 20);
+            this.comboBox1.Location = new System.Drawing.Point(120, 350);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
             this.comboBox1.TabIndex = 18;
-            this.comboBox1.Text = "请选择类别";
+            this.comboBox1.Text = "---";
             this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
             // 
             // materialRaisedButton8
@@ -348,13 +254,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.materialRaisedButton9);
-            this.Controls.Add(this.materialRaisedButton10);
-            this.Controls.Add(this.materialRaisedButton11);
             this.Controls.Add(this.materialRaisedButton12);
-            this.Controls.Add(this.materialRaisedButton14);
-            this.Controls.Add(this.materialRaisedButton15);
-            this.Controls.Add(this.materialRaisedButton16);
             this.Controls.Add(this.materialRaisedButton5);
             this.Controls.Add(this.materialRaisedButton6);
             this.Controls.Add(this.materialRaisedButton4);
@@ -379,13 +279,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton5;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton6;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton9;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton10;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton11;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton12;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton14;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton15;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton16;
         private System.Windows.Forms.Button button1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.ComboBox comboBox1;

@@ -13,7 +13,8 @@ namespace DW_YBBX
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ZX_Business.FrmCeneter());//登录界面
+            //Application.Run(new ZX_Business.FrmCeneter());//登录界面
+            Application.Run(new Login());//登录界面
 
         }
     }

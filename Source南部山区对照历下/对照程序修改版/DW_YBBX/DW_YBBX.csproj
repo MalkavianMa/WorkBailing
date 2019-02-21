@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DW_YBBX</RootNamespace>
     <AssemblyName>众阳医保报销接口</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -272,7 +272,9 @@
   <ItemGroup>
     <Content Include="ImportDLL\Common.dll" />
     <Content Include="ImportDLL\Common.pdb" />
-    <Content Include="ImportDLL\Common.XML" />
+    <Content Include="ImportDLL\Common.XML">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="yibao.ico" />
     <Content Include="接口使用说明.txt" />
     <Content Include="ImportDLL\Interop.grproLib.dll" />

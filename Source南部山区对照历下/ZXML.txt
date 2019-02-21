@@ -1,0 +1,33 @@
+USE [REPORT]
+GO
+
+/****** Object:  Table [dbo].[ZXML]    Script Date: 01/28/2019 14:07:38 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ZXML](
+	[医保项目编码] [nvarchar](500) NULL,
+	[医保项目名称] [nvarchar](560) NOT NULL,
+	[适应症] [nvarchar](max) NULL,
+	[禁忌] [nvarchar](500) NULL,
+	[规格] [nvarchar](300) NULL,
+	[单位] [nvarchar](500) NULL,
+	[物价基准最高价] [nvarchar](500) NULL,
+	[剂型码] [nvarchar](500) NULL,
+	[注销标志] [nvarchar](150) NULL,
+	[生产企业] [nvarchar](500) NULL,
+	[产地码] [nvarchar](500) NULL,
+	[是否处方药] [nvarchar](50) NULL,
+	[GMP标志] [nvarchar](50) NULL,
+	[包装单位] [nvarchar](560) NULL,
+	[最小规格] [nvarchar](50) NULL,
+	[大包装包含小包装数量] [nvarchar](50) NULL,
+	[更新时间] [nvarchar](80) NULL
+) ON [PRIMARY]
+
+GO
+
+

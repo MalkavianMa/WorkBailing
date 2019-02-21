@@ -36,7 +36,7 @@ namespace DW_YBBX.ZX_Business
 
         private void materialRaisedButton4_Click(object sender, EventArgs e)
         {
-            #region 居民门诊统筹、免费用药更新
+            #region 居民门诊统筹
             JmMzTCUP();
 
 
@@ -76,7 +76,7 @@ namespace DW_YBBX.ZX_Business
         }
 
         /// <summary>
-        /// 居民门诊统筹更新
+        /// 居民门诊统筹更新 
         /// </summary>
         private void JmMzTCUP()
         {
@@ -1341,7 +1341,35 @@ namespace DW_YBBX.ZX_Business
         private void materialRaisedButton12_Click(object sender, EventArgs e)
         {
             #region 居民住院、门规、免费用药更新
-            JmZyMgUP(); 
+            JmZyMgUP();
+            #endregion
+
+            #region 职工住院、门规、
+
+            ZgZyMgUP();
+
+            #endregion
+        }
+
+
+        /// <summary>
+        /// 职工住院、门规、
+        /// </summary>
+        private void ZgZyMgUP()
+        {
+            #region 职工住院
+            handelModel = new DW_Handle();
+            string sbjgbh = "370100";
+            DateTime rq = DateTime.Today;
+            string sqlstr3 = @"SELECT NETWORK_ITEM_CODE FROM COMM.COMM.NETWORKING_ITEM_VS_HIS WHERE NETWORK_ITEM_CODE  LIKE '%YB_%' AND NETWORK_ITEM_CODE NOT LIKE '0000%' AND NETWORKING_PAT_CLASS_ID=" + ptmz_ID + " And HOSPITAL_ID='" + MainForm.HOSPITAL_ID + "' ";
+            //DataSet ds = SQLHelper.ExecSqlReDs(sqlstr.ToString());
+            DataTable dt3 = SQLHelper.ExecSqlReDs(sqlstr3.ToString()).Tables[0];
+
+            for (int i = 0; i < dt3.Rows.Count; i++)
+            {
+                string yyxmbm = dt3.Rows[i]["NETWORK_ITEM_CODE"].ToString();
+                handelModel.Down_Yyxm_ZFBL_ZGmg(sbjgbh, yyxmbm, rq.ToString("yyyy-MM-dd"),MainForm.HOSPITAL_ID,"C","A","");
+            } 
             #endregion
 
         }
@@ -1372,6 +1400,11 @@ namespace DW_YBBX.ZX_Business
         }
 
         private void materialRaisedButton16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialRaisedButton11_Click(object sender, EventArgs e)
         {
 
         }

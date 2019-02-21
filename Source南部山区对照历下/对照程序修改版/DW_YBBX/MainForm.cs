@@ -126,6 +126,10 @@ namespace DW_YBBX
                 case "目录下载":
                     frm = new ZX_Business.DownLoad();
                     break;
+
+                case "下载更新":
+                    frm = new ZX_Business.FrmCeneter();
+                    break;
             }
             return frm;
         }
@@ -319,6 +323,19 @@ namespace DW_YBBX
             frm.Show();
         }
 
-       
+        private void 自付比例校准ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 中心上传下载更新ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 病案首页上传ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

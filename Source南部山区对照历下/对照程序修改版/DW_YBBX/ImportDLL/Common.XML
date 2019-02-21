@@ -4,6 +4,32 @@
         <name>Common</name>
     </assembly>
     <members>
+        <member name="T:Malkavian.AssGetCFG">
+            <summary>
+            串编码
+            </summary>
+        </member>
+        <member name="M:Malkavian.AssGetCFG.String2Unicode(System.String)">
+            <summary>
+            字符串转Unicode 
+            </summary>
+            <param name="source">源字符串</param>
+            <returns>编码后的字符串</returns>
+        </member>
+        <member name="M:Malkavian.AssGetCFG.get_uft8(System.String)">
+            <summary>
+             get_uft8
+            </summary>
+            <param name="unicodeString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Malkavian.AssGetCFG.getCFG(System.String)">
+            <summary>
+            获取配置
+            </summary>
+            <param name="cfg">需要获取配置</param>
+            <returns>配置参数</returns>
+        </member>
         <member name="T:Malkavian.Common">
             <summary>
             公共类
@@ -32,13 +58,32 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Malkavian.Common.getCFG(System.String,System.String,System.String,System.String)">
+        <member name="F:Malkavian.Common.oSspliter">
+            <summary>
+            操作系统0 ：windows ； 1： linux
+            </summary>
+        </member>
+        <member name="P:Malkavian.Common.OSspliter">
+            <summary>
+            操作系统0 ：windows ； 1： linux
+            </summary>
+        </member>
+        <member name="M:Malkavian.Common.getCFG(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+            <param name="cfg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Malkavian.Common.getCFG(System.String,System.String,System.String,System.String,System.String)">
             <summary>
             
             </summary>
             <param name="cfg">配置名</param>
-            <param name="mark">0解密密文(可选)</param>
+            <param name="mark">0为解密密文(可选),‘HIS’为加解密小工具的解密</param>
             <param name="initText">初始创建文件内节点配置(第一次使用时必须配置)</param>
+            <param name="init">是否初始化删除1为删除</param>
             <param name="xmlPath">配置文件路径(可选)</param>
             <returns></returns>
         </member>
@@ -81,6 +126,46 @@
             <param name="sequence">出现的次数</param>
             <returns>出现的次数在字符串中的序列数</returns>
         </member>
+        <member name="T:Malkavian.DESEncrypt">
+            <summary>
+            DES加密/解密类。
+            </summary>
+        </member>
+        <member name="M:Malkavian.DESEncrypt.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Malkavian.DESEncrypt.Encrypt(System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="Text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Malkavian.DESEncrypt.Encrypt(System.String,System.String)">
+            <summary> 
+            加密数据 
+            </summary> 
+            <param name="Text"></param> 
+            <param name="sKey"></param> 
+            <returns></returns> 
+        </member>
+        <member name="M:Malkavian.DESEncrypt.Decrypt(System.String)">
+            <summary>
+            解密
+            </summary>
+            <param name="Text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Malkavian.DESEncrypt.Decrypt(System.String,System.String)">
+            <summary> 
+            解密数据 
+            </summary> 
+            <param name="Text"></param> 
+            <param name="sKey"></param> 
+            <returns></returns> 
+        </member>
         <member name="T:Malkavian.Encryption">
             <summary>
             加密解密类
@@ -101,6 +186,276 @@
             <param name="targetValue"></param>
             <param name="key"></param>
             <returns></returns>
+        </member>
+        <member name="T:Malkavian.FileCommon">
+            <summary>
+            文件帮助类
+            </summary>
+        </member>
+        <member name="F:Malkavian.FileCommon.result">
+            <summary>
+            文件列表结果
+            </summary>
+        </member>
+        <member name="M:Malkavian.FileCommon.ScanPic(System.String)">
+            <summary>
+            遍历文件夹下的文件
+            </summary>
+            <param name="p">文件夹路径</param>
+        </member>
+        <member name="M:Malkavian.FileCommon.GetFiles(System.IO.DirectoryInfo)">
+            <summary>
+            目录及子目录下的文件列表
+            </summary>
+            <param name="directory"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Malkavian.LinkCommon">
+            <summary>
+            短链接
+            </summary>
+        </member>
+        <member name="M:Malkavian.LinkCommon.getShotLink(System.String)">
+            <summary>
+            获取短链接
+            </summary>
+            <param name="tUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Malkavian.MathCommon">
+            <summary>
+            专用数学类
+            </summary>
+        </member>
+        <member name="M:Malkavian.MathCommon.#ctor">
+            <summary>
+            构造
+            </summary>
+        </member>
+        <member name="M:Malkavian.MathCommon.ConvertResult``1(``0,System.String)">
+            <summary>
+             转换为指定类型 有异常返回初始值  例如decimal 有异常返回0
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="t">值</param>
+            <param name="result">转换的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="T:Malkavian.MSSQLHelper">
+            <summary>
+            sql帮助
+            </summary>
+        </member>
+        <member name="P:Malkavian.MSSQLHelper.IsConnCloseWhenEveryRun">
+            <summary>
+            获取或者设置连接是否在每一次执行相关方法后自动关闭,
+            如果不自动关闭需要手动调用Close方法关闭链接
+            </summary>
+        </member>
+        <member name="P:Malkavian.MSSQLHelper.ConnectionString">
+            <summary>
+            获取链接字符串 
+            </summary>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.#ctor(System.String)">
+            <summary>
+            默认构造函数 用于初始化数据库连接，使用该方法初始化时，
+            每次执行非事务数据库相关的方法或者结束事物后都会关闭连接
+            </summary>
+            <param name="connstring">数据库连接字符串</param>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.#ctor(System.String,System.Boolean)">
+            <summary>
+            默认构造函数 用于初始化数据库连接，使用该方法初始化时，
+            每次执行非事务数据库相关的方法或者结束事物后都会关闭连接
+            </summary>
+            <param name="connstring">数据库连接字符串</param>
+            <param name="isConnCloseWhenEveryRun"> 获取或者设置连接是否在每一次执行相关方法后自动关闭,
+            如果不自动关闭需要手动调用Close方法关闭链接</param>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.Open">
+            <summary>
+            打开数据库连接
+            </summary>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.Close">
+            <summary>
+            关闭数据库连接
+            </summary>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.BeginTran">
+            <summary>
+            开始一个事务
+            </summary>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.CommitTran">
+            <summary>
+            提交一个事务
+            </summary>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.RollbackTran">
+            <summary>
+            回滚当前事务
+            </summary>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.ExistRepeat(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行查询语句，返回是否存在值,默认返回不存在
+            </summary>
+            <param name="sql"></param>
+            <param name="sps"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.ExecSqlReInt(System.String)">
+            <summary>
+            执行sql语句返回受影响的行数
+            </summary>
+            <param name="sqlStr">执行的sql语句</param>
+            <returns>受影响的行数</returns>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.ExecSqlReInt(System.String,System.Data.IDataParameter[])">
+            <summary>
+            执行带参数的sql语句返回受影响的行数
+            </summary>
+            <param name="sqlStr">执行的sql语句</param>
+            <param name="para">参数列表</param>
+            <returns>受影响的行数</returns>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.ExecSqlReDr(System.Data.CommandBehavior,System.String)">
+            <summary>
+            执行sql语句返回Reader执行该方法时，数据库连接不会关闭如果IsConnCloseWhenEveryRun 为true并且没有执行事务则
+            在关闭dr的时候数据库连接自动关闭。在提交或者回滚事物之前必须关闭dr
+            </summary>
+            <param name="commandBehavior">前置条件：必须将改数据连接类的IsConnCloseWhenEveryRun 设置为false或者在事物过程中执行语句时
+            该项起作用，否则commandBehavior 一直为CloseConnection 即关闭dr时自动关闭链接 查询结果对数据库连接影响的说明</param>
+            <param name="sqlstr">执行的sql语句</param>
+            <returns>返回的reader</returns>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.ExecSqlReDr(System.String)">
+            <summary>
+            执行sql语句返回Reader执行该方法时，数据库连接不会关闭如果IsConnCloseWhenEveryRun 为true并且没有执行事务则
+            在关闭dr的时候数据库连接自动关闭。在提交或者回滚事物之前必须关闭dr
+            </summary>
+            <param name="sqlstr">执行的sql语句</param>
+            <returns>返回的reader</returns>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.ExecSqlReDr(System.Data.CommandBehavior,System.String,System.Data.IDataParameter[])">
+            <summary>
+            执行sql语句返回Reader执行该方法时，数据库连接不会关闭如果IsConnCloseWhenEveryRun 为true并且没有执行事务则
+            在关闭dr的时候数据库连接自动关闭。在提交或者回滚事物之前必须关闭dr
+            </summary>
+            <param name="commandBehavior">前置条件：必须将改数据连接类的IsConnCloseWhenEveryRun 设置为false或者在事物过程中执行语句时
+            该项起作用，否则commandBehavior 一直为CloseConnection 即关闭dr时自动关闭链接 查询结果对数据库连接影响的说明</param>
+            <param name="sqlstr">执行的sql语句</param>
+            <param name="para">参数列表</param>
+            <returns>返回的SqlDataReader</returns>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.ExecSqlReDr(System.String,System.Data.IDataParameter[])">
+            <summary>
+            执行sql语句返回Reader执行该方法时，数据库连接不会关闭如果IsConnCloseWhenEveryRun 为true并且没有执行事务则
+            在关闭dr的时候数据库连接自动关闭。在提交或者回滚事物之前必须关闭dr
+            </summary>
+            <param name="sqlstr">执行的sql语句</param>
+            <param name="para">参数列表</param>
+            <returns>返回的SqlDataReader</returns>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.ExecSqlReDs(System.String)">
+            <summary>
+            执行sql语句返回数据集
+            </summary>
+            <param name="sqlStr">执行sql语句</param>
+            <returns>返回的数据集</returns>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.ExecSqlReDs(System.String,System.Data.IDataParameter[])">
+            <summary>
+            执行带参数sql语句返回数据集
+            </summary>
+            <param name="sqlStr">执行的sql语句</param>
+            <param name="para">参数列表</param>
+            <returns>返回的数据集</returns>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.ExecProc_ReRet(System.String,System.String[],System.Object[])">
+            <summary>
+            执行存储过程返回return值 string 类型
+            </summary>
+            <param name="StoreName">过程名</param>
+            <param name="ParamsName">参数名数组</param>
+            <param name="ParamsValue">参数值数组</param>
+            <returns>Return值</returns>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.ExecProc_ReInt(System.String,System.String[],System.Object[],System.String)">
+            <summary>
+            执行带参数的存储过程返回Int类型
+            </summary>
+            <param name="StoreName">存储过程名称</param>
+            <param name="ParamsName">参数名称列表</param>
+            <param name="ParamsValue">参数值列表</param>
+            <param name="OutName">返回参数名</param>
+            <returns>返回的Int类型值</returns>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.ExecProc_ReStr(System.String,System.String[],System.Object[],System.String)">
+            <summary>
+            执行带参数的存储过程返回String类型
+            </summary>
+            <param name="StoreName">存储过程名称</param>
+            <param name="ParamsName">参数名称列表</param>
+            <param name="ParamsValue">参数值列表</param>
+            <param name="OutName">返回参数名</param>
+            <returns>返回的String类型值</returns>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.ExecProc_ReStr(System.String,System.Data.SqlClient.SqlParameter[],System.String)">
+            <summary>
+            执行带参数的存储过程返回String类型
+            </summary>
+            <param name="StoreName">存储过程名称</param>
+            <param name="sqlParams">参数集合</param>
+            <param name="OutName">返回参数名</param>
+            <returns>返回的String类型值</returns>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.ExecProc_ReDs(System.String,System.String[],System.Object[])">
+            <summary>
+            执行带参数的存储过程返回数据集
+            </summary>
+            <param name="StoreName">过程名称</param>
+            <param name="ParamsName">参数名称列表</param>
+            <param name="ParamsValue">参数值列表</param>
+            <returns>返回的数据集</returns>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.ExecProc_ReDs(System.String,System.String[],System.Object[],System.Collections.Generic.IDictionary{System.String,System.String}@)">
+            <summary>
+            执行带参数的存储过程返回数据集
+            </summary>
+            <param name="StoreName">过程名称</param>
+            <param name="ParamsName">参数名称列表</param>
+            <param name="ParamsValue">参数值列表</param>
+            <param name="OutNameValues">存储过程中的输出参数</param>
+            <returns>返回的数据集</returns>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.ExecProc_ReDsT(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            执行分页存储过程
+            </summary>
+            <param name="StoreName"></param>
+            <param name="Condition"></param>
+            <param name="PageSize"></param>
+            <param name="PageIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.Finalize">
+            <summary>
+            析构方法
+            </summary>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.Dispose(System.Boolean)">
+            <summary>
+            释放占用的资源
+            </summary>
+            <param name="dis"></param>
+        </member>
+        <member name="M:Malkavian.MSSQLHelper.Dispose">
+            <summary>
+            释放数据库连接
+            </summary>
         </member>
     </members>
 </doc>

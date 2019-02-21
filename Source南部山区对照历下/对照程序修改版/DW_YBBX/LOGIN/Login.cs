@@ -10,13 +10,15 @@ using Config;
 using System.Collections;
 using DW_YBBX.ZX_Business;
 using Malkavian.DButility;
-
+using Malkavian;
 namespace DW_YBBX
 {
     public partial class Login : Form
     {
         public string UserCode, Password, UserName, HOSPITAL_ID, HOSPITAL_NAME;//登录用户名、密码
-        public MSSQLHelpers SQLHelper = new MSSQLHelpers(ConfigurationManager.ConnectionStrings["connStr"].ToString());
+       //  public MSSQLHelpers SQLHelper = new MSSQLHelpers(ConfigurationManager.ConnectionStrings["connStr"].ToString());
+        public MSSQLHelpers SQLHelper = new MSSQLHelpers(Common.getCFG("SQL","HIS", @"<SQL>6ABF6E75A50744805A7C3B5B5EC51FEEC4B2C77D3EE1415F05BBBB300E839C985D318EA87B743962991437C6A281B901ED1D44E323FC1B684B137FFAD7B38A7C38083C18E372EE4BAF6503EF009737C02D75E222526F10221EDB9CCD380C70F32135EFD99660208EED538E00651A61CA</SQL>", "0",Environment.CurrentDirectory + @"\AppConfig.xml"));
+
         string sbjgbh; //参保人所属的社保机构编号
         string yybm; //医院编码（医院在医保中心的编码）
         string UserCode_DW;//地纬的用户名
@@ -28,12 +30,12 @@ namespace DW_YBBX
         public Login()
         {
             decimal nowVesion = decimal.Parse(sqlVersion.ExecuteScalar(strVersion).ToString());
-            if (clientVersion<nowVesion)
+            if (clientVersion < nowVesion)
             {
-                MessageBox.Show("当前对照工具版本:" + clientVersion+" 最新版本号:"+nowVesion+"请联系管理员!");
-                System.Environment.Exit(0); 
+                MessageBox.Show("当前对照工具版本:" + clientVersion + " 最新版本号:" + nowVesion + "请联系管理员!");
+                System.Environment.Exit(0);
             }
-           
+
             InitializeComponent();
             //skinEngine1.SkinFile = Application.StartupPath + @"\office2007.ssk"; //
         }
@@ -46,7 +48,7 @@ namespace DW_YBBX
         {
 
 
-           
+
 
             var time = DateTime.Now;
             UserCode = text_UserCode.Text.ToString().Trim();
@@ -113,7 +115,7 @@ namespace DW_YBBX
 
                 sbjgbh = fsbjg.selSbjgBH;
                 networkPatclassID = "";//fsbjg.fglyComtext;
-                
+
                 fsbjg.Close();
                 //LOGIN.Sel_SBJG frm = new LOGIN.Sel_SBJG(this.text_UserCode.Text.ToString(), this.textBox_CzyXm.Text.ToString(), HOSPITAL_ID, HOSPITAL_NAME);
                 MainForm frm = new MainForm(UserCode, UserName, HOSPITAL_ID, HOSPITAL_NAME, sbjgbh, yybm, UserCode_DW, Password_DW, networkPatclassID);
