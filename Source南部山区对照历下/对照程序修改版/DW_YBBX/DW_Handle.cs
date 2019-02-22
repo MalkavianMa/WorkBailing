@@ -57,6 +57,17 @@ namespace DW_YBBX
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p1"></param>
+        /// <param name="p2"></param>
+        /// <returns></returns>
+        public string ExeFuncReStr(string p1, object[] p2)
+        {
+            return seiproxy.ExeFuncReStr(p1, p2);
+        }
+
+        /// <summary>
         /// 获取返回数值
         /// </summary>
         /// <param name="strPara"></param>
@@ -1792,6 +1803,8 @@ SELECT   " + zgtc_ID + @"  ,
         }
 
         #endregion
+
+
 
 
 
