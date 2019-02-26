@@ -1,0 +1,1641 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PayAPIInterface</name>
+    </assembly>
+    <members>
+        <member name="T:PayAPIInterface.ITradePayInterface">
+            <summary>
+            交易支付接口
+            </summary>
+        </member>
+        <member name="M:PayAPIInterface.ITradePayInterface.TradePay(PayAPIInterface.ParaModel.TradePayParameter)">
+            <summary>
+            交易支付
+            </summary>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIInterface.ITradePayInterface.TradeCancel(PayAPIInterface.ParaModel.TradePayParameter)">
+            <summary>
+            交易撤销
+            </summary>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIInterface.ITradePayInterface.TradeRefund(PayAPIInterface.ParaModel.TradePayParameter)">
+            <summary>
+            交易退费（可部分退费）
+            </summary>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIInterface.ITradePayInterface.TradeQuery(PayAPIInterface.ParaModel.TradePayParameter)">
+            <summary>
+            交易查询
+            </summary>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.AutoId">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.UpDetailId">
+            <summary>
+            获取或设置费用上传ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.NetworkSettleId">
+            <summary>
+            获取或设置联网结算ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.OrderId">
+            <summary>
+            获取或设置医嘱ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.ChargeId">
+            <summary>
+            获取或设置计价项目ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.ChargeType">
+            <summary>
+            项目类型
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.ChargeCode">
+            <summary>
+            费用编码
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.ChargeName">
+            <summary>
+            费用名称
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.CreateTime">
+            <summary>
+            获取或设置创建时间
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.NetworkItemCode">
+            <summary>
+            医保项目编码
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.Price">
+            <summary>
+            获取或设置价格
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.Quantity">
+            <summary>
+            获取或设置数量
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.Amount">
+            <summary>
+            获取或设置金额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.MedAmount">
+            <summary>
+            获取或设置报销金额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.AmountSelfBurdern">
+            <summary>
+            获取或设置自负金额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.AmountSelf">
+            <summary>
+            获取或设置自理金额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.UploadBackSerial">
+            <summary>
+            获取或设置联网返回明细流水号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.DeptCode">
+            <summary>
+            科室编号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.DocCode">
+            <summary>
+            医生编号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.Unit">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.Spec">
+            <summary>
+            规格
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.DrugFormName">
+            <summary>
+            剂型
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.NetworkItemProp">
+            <summary>
+            联网费用属性
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.NetworkItemClass">
+            <summary>
+            联网费用类型
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.SelfBurdenRatio">
+            <summary>
+            自负比例
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.HisItemName">
+            <summary>
+            HIS项目名称
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.Memo1">
+            <summary>
+            备注一
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.Memo2">
+            <summary>
+            备注二
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.Memo3">
+            <summary>
+            备注三
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.Memo4">
+            <summary>
+            备注四
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.Memo5">
+            <summary>
+            备注五
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.Memo6">
+            <summary>
+            备注六
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.Memo7">
+            <summary>
+            备注七
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.FeeDetail.Memo8">
+            <summary>
+            备注八
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.Model.Comm.NetworkPatInfo">
+            <summary>
+            联网患者信息
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkPatInfo.MedicalNo">
+            <summary>
+            医保个人编号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkPatInfo.ICNo">
+            <summary>
+            卡号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkPatInfo.PatName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkPatInfo.IDNo">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkPatInfo.Sex">
+            <summary>
+            性别（男，女）
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkPatInfo.Birthday">
+            <summary>
+            出生日期
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkPatInfo.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkPatInfo.MedicalType">
+            <summary>
+            医疗人员类别
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkPatInfo.MedicalTypeName">
+            <summary>
+            医疗人员类别名称
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkPatInfo.ICAmount">
+            <summary>
+            个人帐户余额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkPatInfo.CompanyNo">
+            <summary>
+            单位编号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkPatInfo.CompanyName">
+            <summary>
+            单位名称
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.Model.Comm.NetworkSettleList">
+            <summary>
+            结算参数
+            </summary>
+        </member>
+        <!-- 对于成员“P:PayAPIInterface.Model.Comm.NetworkSettleList.ParaName”忽略有格式错误的 XML 注释 -->
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleList.ParaValue">
+            <summary>
+            参数值
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleList.Memo">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="M:PayAPIInterface.Model.Comm.NetworkSettleMain.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:PayAPIInterface.Model.Comm.NetworkSettleMain.Amount_Pos">
+            <summary>
+            pos刷卡金额，初始值默认0
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.NetworkingPatClassId">
+            <summary>
+            获取或设置住院联网结算ID
+            </summary> 
+            <summary>
+            获取或设置联网费别ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.NetworkPatName">
+            <summary>
+            获取或设置联网患者姓名
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.NetworkPatType">
+            <summary>
+            获取或设置联网患者类型
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.CreateTime">
+            <summary>
+            获取或设置创建时间
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.SettleType">
+            <summary>
+            获取或设置结算类型
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.SettleNo">
+            <summary>
+            获取或设置结算流水号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.IsInvalid">
+            <summary>
+            获取或设置作废标志
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.IsSettle">
+            <summary>
+            获取或设置结算标志
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.IsCash">
+            <summary>
+            获取或设置是否收费标志
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.IsNeedRefund">
+            <summary>
+            获取或设置是否需要退款标志
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.IsRefundDo">
+            <summary>
+            获取或设置是否退费标志
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.Amount">
+            <summary>
+            获取或设置费用总额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.GetAmount">
+            <summary>
+            获取或设置现金支付
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.MedAmountTotal">
+            <summary>
+            获取或设置医保农合支付总额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.MedAmountTc">
+            <summary>
+            获取或设置统筹支付金额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.MedAmountZhzf">
+            <summary>
+            获取或设置账户支付金额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.MedAmountGwy">
+            <summary>
+            获取或设置公务员补助金额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.MedAmountDb">
+            <summary>
+            获取或设置大病补助金额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.MedAmountBz">
+            <summary>
+            获取或设置补助金额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.MedAmountJm">
+            <summary>
+            获取或设置减免金额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.SettleBackNo">
+            <summary>
+            获取或设置撤销流水号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.NetworkSettleTime">
+            <summary>
+            获取或设置医保结算时间
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.NetworkRefundTime">
+            <summary>
+            获取或设置医保退费时间
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.InvoiceId">
+            <summary>
+            获取或设置发票主表ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.OperatorId">
+            <summary>
+            获取或设置操作员ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkSettleMain.AmountPos">
+            <summary>
+            获取或设置pos刷卡金额
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.Model.Comm.NetworkVsInstitution">
+            <summary>
+            联网机构信息对应
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkVsInstitution.NetworkType">
+            <summary>
+            获取或设置联网类型1：医保，2：农合
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkVsInstitution.HospitalId">
+            <summary>
+            获取或设置医院ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkVsInstitution.DeptId">
+            <summary>
+            获取或设置科室ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkVsInstitution.UserId">
+            <summary>
+            获取或设置用户内部系统号，唯一，不可以更改。
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkVsInstitution.InstitutionCode">
+            <summary>
+            获取或设置对应机构编码
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkVsInstitution.InstitutionName">
+            <summary>
+            获取或设置对应机构名称
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkVsInstitution.InstitutionClass">
+            <summary>
+            获取或设置对应机构级别
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkVsInstitution.Memo">
+            <summary>
+            获取或设置备注
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkVsInstitution.InstitutionUserCode">
+            <summary>
+            获取或设置机构对应用户名
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.NetworkVsInstitution.InstitutionPassword">
+            <summary>
+            获取或设置对应机构密码
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.Model.Comm.PayType">
+            <summary>
+            支付方式
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.PayType.PayTypeId">
+            <summary>
+            支付方式编号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.PayType.PayTypeName">
+            <summary>
+            支付方式名称
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.PayType.PayAmount">
+            <summary>
+            支付金额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.OperatorInfo.UserSysId">
+            <summary>
+            系统ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.OperatorInfo.UserName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.OperatorInfo.DeptId">
+            <summary>
+            科室编号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.OperatorInfo.HospitalId">
+            <summary>
+            医院编号
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.Model.Comm.PayInstance">
+            <summary>
+            支付实体类
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.PayInstance.ChargeClassId">
+            <summary>
+            费别ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.PayInstance.NetworkPatClassId">
+            <summary>
+            联网费别ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.PayInstance.AssemblyName">
+            <summary>
+            程序集名称
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.PayInstance.ClassName">
+            <summary>
+            实体类名称
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.PayInstance.DLLFileName">
+            <summary>
+            类库文件名称
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Comm.PayInstance.NetworkType">
+            <summary>
+            接口类型
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.Model.In.InNetworkSettleList">
+            <summary>
+            住院联网结算参数列表
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkSettleList.PatInHosId">
+            <summary>
+            住院患者ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkSettleList.InNetworkSettleId">
+            <summary>
+            联网结算ID
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.Model.In.InPatInfo">
+            <summary>
+            住院患者信息
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.PatInHosId">
+            <summary>
+            患者住院编号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.IDNo">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.InPatId">
+            <summary>
+            住院患者信息编号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.PatInHosCode">
+            <summary>
+            住院号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.InPatName">
+            <summary>
+            患者姓名
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.BedNo">
+            <summary>
+            床号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.InDateTime">
+            <summary>
+            入院时间
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.InDeptCode">
+            <summary>
+            入院科室
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.InDeptName">
+            <summary>
+            入院科室
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.InNetWorkDeptCode">
+            <summary>
+            入院联网科室编号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.InNetWorkDeptName">
+            <summary>
+            入院联网科室名称
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.InWardName">
+            <summary>
+            入院病区
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.InBedNo">
+            <summary>
+            床号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.MainDocCode">
+            <summary>
+            主治医师
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.InDiagnoseCode">
+            <summary>
+            入院诊断编码
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.InDiagnoseName">
+            <summary>
+            入院诊断名称
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.OutDateTime">
+            <summary>
+            出院时间
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.OutDiagnoseCode">
+            <summary>
+            出院诊断编码
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.OutDiagnoseName">
+            <summary>
+            出院诊断名称
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.OutNetWorkDeptCode">
+            <summary>
+            出院联网科室编号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.OutNetWorkDeptName">
+            <summary>
+            出院联网科室名称
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.OPSCode">
+            <summary>
+            手术编号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.DoctorName">
+            <summary>
+            主治医生姓名
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.DoctorCode">
+            <summary>
+            主治医生编码(医生user_sys_id)
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.PatPhone">
+            <summary>
+            病人联系电话
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InPatInfo.PrepayTotal">
+            <summary>
+            押金总额
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.Model.In.InNetworkRegisters">
+            <summary>
+            住院医保登记
+            </summary>
+        </member>
+        <member name="M:PayAPIInterface.Model.In.InNetworkRegisters.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.InNetworkRegisterId">
+            <summary>
+            获取或设置住院联网登记ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.PatInHosId">
+            <summary>
+            获取或设置住院ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.NetPatName">
+            <summary>
+            获取或设置联网患者姓名
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.NetPatType">
+            <summary>
+            获取或设置患者在医保或农合中的人员类型（如一般农民（户），一般职工等）
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.PatInHosSerial">
+            <summary>
+            获取或设置住院登记流水号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.CreateTime">
+            <summary>
+            获取或设置创建时间
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.NetRegSerial">
+            <summary>
+            获取或设置联网登记返回流水号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.IsReg">
+            <summary>
+            获取或设置是否登记
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.RegTimes">
+            <summary>
+            获取或设置登记次数
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.NetType">
+            <summary>
+            获取或设置报销类型（如一般门诊，大病门诊，一般住院等）
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.NetDiagnosCode">
+            <summary>
+            获取或设置登记的医保或农合诊断编码
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.NetDiagnosName">
+            <summary>
+            获取或设置登记的医保或农合诊断名称
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.IsInvalid">
+            <summary>
+            获取或设置作废标志
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.OperatorId">
+            <summary>
+            获取或设置操作员ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.CardNo">
+            <summary>
+            获取或设置医疗卡号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.MemberNo">
+            <summary>
+            获取或设置成员编号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.CantonCode">
+            <summary>
+            获取或设置行政区号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.Memo1">
+            <summary>
+            获取或设置扩展一
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.Memo2">
+            <summary>
+            获取或设置扩展2
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.CompanyName">
+            <summary>
+            单位名称
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.PatAddress">
+            <summary>
+            患者住址
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.IdNo">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.PatClassID">
+            <summary>
+            患者所属医疗保险类别（医保，农合等）
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.OutDiagnoseCode">
+            <summary>
+            出院诊断编码
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.OutDiagnoseName">
+            <summary>
+            出院诊断名称
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkRegisters.InNetworkSettleId">
+            <summary>
+            住院结算ID
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.Model.In.InNetworkSettleMain">
+            <summary>
+            住院医保结算
+            </summary>
+        </member>
+        <member name="M:PayAPIInterface.Model.In.InNetworkSettleMain.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkSettleMain.InNetworkSettleId">
+            <summary>
+            获取或设置住院联网结算ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkSettleMain.PatInHosId">
+            <summary>
+            获取或设置住院患者ID
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.Model.In.InNetworkUpDetail">
+            <summary>
+            住院医保接口本地存储费用明细
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkUpDetail.PatInHosId">
+            <summary>
+            住院ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkUpDetail.InNetworkSettleId">
+            <summary>
+            获取或设置联网结算ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.In.InNetworkUpDetail.InBillId">
+            <summary>
+            获取或设置住院费用ID
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.Model.Out.OutNetworkSettleStatus">
+            <summary>
+            门诊结算状态
+            </summary>
+        </member>
+        <member name="M:PayAPIInterface.Model.Out.OutNetworkSettleStatus.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkSettleStatus.TradeId">
+            <summary>
+            订单ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkSettleStatus.OutPatId">
+            <summary>
+            获取或设置门诊患者ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkSettleStatus.CreateTime">
+            <summary>
+            获取或设置创建时间
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkSettleStatus.OperateId">
+            <summary>
+            获取或设置操作员ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkSettleStatus.OutNetworkSettleState">
+            <summary>
+            获取或设置结算状态
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkSettleStatus.WorkstationId">
+            <summary>
+            获取或设置工作站
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkSettleStatus.ErrorReason">
+            <summary>
+            获取或设置错误原因
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkSettleStatus.IpAddress">
+            <summary>
+            获取或设置客户端IP和客户端名字
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkSettleStatus.HandleReuslt">
+            <summary>
+            获取或设置
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkSettleStatus.AutoId">
+            <summary>
+            获取或设置
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.Model.Out.OutNetworkUpDetail">
+            <summary>
+            门诊费用明细
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkUpDetail.OutPatId">
+            <summary>
+            门诊患者ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkUpDetail.OutNetworkSettleId">
+            <summary>
+            门诊结算ID
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.Model.Out.TradePayRecord">
+            <summary>
+            订单交易：支付信息实体类
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.TradePayRecord.TradePayId">
+            <summary>
+            获取或设置订单支付信息ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.TradePayRecord.TradeId">
+            <summary>
+            获取或设置订单ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.TradePayRecord.PayTypeId">
+            <summary>
+            获取或设置支付方式ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.TradePayRecord.Amount">
+            <summary>
+            获取或设置支付金额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.TradePayRecord.BusinessNo">
+            <summary>
+            获取或设置第三方交易流水号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.TradePayRecord.BusinessNoHis">
+            <summary>
+            获取或设置HIS交易流水号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.TradePayRecord.CreateTime">
+            <summary>
+            获取或设置创建时间
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.TradePayRecord.TradeStatus">
+            <summary>
+            获取或设置1.结算成功  2.质疑
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.TradePayRecord.TradeClassName">
+            <summary>
+            获取或设置交易种类：医保统筹等
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.TradePayRecord.IsConfirm">
+            <summary>
+            获取或设置订单支付确认标识
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.TradePayRecord.Memo">
+            <summary>
+            获取或设置备注
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.TradePayRecord.OutNetworkSettleId">
+            <summary>
+              获取或设置 联网结算ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.TradePayRecord.BackType">
+            <summary>
+              获取或设置 冲退标识,未完成结算订单，交易记录取消结算标识：0 正常支付记录   1 当前支付记录已进行冲退操作，无法正常结算使用  2 冲退记录
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.Model.Out.OutNetworkSettleList">
+            <summary>
+            门诊联网结算参数列表
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkSettleList.OutPatId">
+            <summary>
+            门诊患者ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkSettleList.OutNetworkSettleId">
+            <summary>
+            联网结算ID
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.Model.Out.OutNetworkRegisters">
+            <summary>
+            门诊报销病人信息
+            </summary>
+        </member>
+        <member name="M:PayAPIInterface.Model.Out.OutNetworkRegisters.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.OutNetworkRegisterId">
+            <summary>
+            获取或设置门诊联网登记ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.OutPatId">
+            <summary>
+            获取或设置门诊ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.NetPatName">
+            <summary>
+            获取或设置联网患者姓名
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.NetPatType">
+            <summary>
+            获取或设置联网人员类型
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.PatSerial">
+            <summary>
+            获取或设置门诊登记流水号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.CreateTime">
+            <summary>
+            获取或设置创建时间
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.NetRegSerial">
+            <summary>
+            获取或设置联网登记返回流水号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.IsReg">
+            <summary>
+            获取或设置是否登记
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.RegTimes">
+            <summary>
+            获取或设置登记次数
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.NetType">
+            <summary>
+            获取或设置联网类型
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.NetDiagnosCode">
+            <summary>
+            获取或设置登记的医保或农合诊断编码
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.NetDiagnosName">
+            <summary>
+            获取或设置登记的医保或农合诊断名称
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.IsInvalid">
+            <summary>
+            获取或设置作废标志
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.OperatorId">
+            <summary>
+            获取或设置操作员ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.CardNo">
+            <summary>
+            获取或设置医疗卡号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.MemberNo">
+            <summary>
+            获取或设置成员编号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.CantonCode">
+            <summary>
+            获取或设置行政区号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.Memo1">
+            <summary>
+            获取或设置扩展一
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.Memo2">
+            <summary>
+            获取或设置扩展2
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.Balance">
+            <summary>
+            获取或设置账户余额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.CompanyName">
+            <summary>
+            单位名称
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.PatAddress">
+            <summary>
+            患者住址
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.IdNo">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkRegisters.OutNetworkSettleId">
+            <summary>
+            结算流水号
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.Model.Out.OutNetworkSettleMain">
+            <summary>
+            门诊医保结算模型
+            </summary>
+        </member>
+        <member name="M:PayAPIInterface.Model.Out.OutNetworkSettleMain.#ctor">
+            <summary>
+            构造门诊医保结算数据
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkSettleMain.OutNetworkSettleId">
+            <summary>
+            获取或设置门诊联网结算ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkSettleMain.OutPatId">
+            <summary>
+            获取或设置门诊患者ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutNetworkSettleMain.RelationId">
+            <summary>
+            获取或设置关联ID
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.Model.Out.OutPatInfo">
+            <summary>
+            门诊信息类
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutPatInfo.OutPatId">
+            <summary>
+            门诊患者ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutPatInfo.PatName">
+            <summary>
+            患者姓名
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutPatInfo.PatChargeClassId">
+            <summary>
+            患者费别ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutPatInfo.IDNo">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.Model.Out.OutPatInfo.Balance">
+            <summary>
+            余额
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.ParaModel.MidifyParaType">
+            <summary>
+            修正参数类型
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.ParaModel.InCommonParameter">
+            <summary>
+            住院通用参数
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.InCommonParameter.IsMiddleSettle">
+            <summary>
+            是否中间结算
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.InCommonParameter.NetworkPatClassId">
+            <summary>
+            联网费别ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.InCommonParameter.InBillIds">
+            <summary>
+            需要结算的费用列表
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.InCommonParameter.InNetworkSettleId">
+            <summary>
+            住院结算ID
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.ParaModel.InPayParameter">
+            <summary>
+            住院第三方
+            </summary>
+        </member>
+        <member name="M:PayAPIInterface.ParaModel.InPayParameter.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.InPayParameter.CommPara">
+            <summary>
+            住院通用参数
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.InPayParameter.NetworkPatInfo">
+            <summary>
+            联网患者人员信息
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.InPayParameter.PatInfo">
+            <summary>
+            人员信息
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.InPayParameter.RegInfo">
+            <summary>
+            登记信息（联网登记成功后，由具体接口更新此数据）
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.InPayParameter.SettleInfo">
+            <summary>
+            结算信息
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.InPayParameter.SettleParaList">
+            <summary>
+            结算返回参数列表
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.InPayParameter.Details">
+            <summary>
+            费用信息
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.InPayParameter.PayTypeList">
+            <summary>
+            支付方式列表（由具体接口赋值）
+            </summary>
+        </member>
+        <member name="M:PayAPIInterface.ParaModel.InPayParameter.AddSettlePara(System.String,System.String,System.String)">
+            <summary>
+            添加返回参数
+            </summary>
+            <param name="paraName">参数名称</param>
+            <param name="paraValue">参数值</param>
+            <param name="memo">备注</param>
+        </member>
+        <member name="M:PayAPIInterface.ParaModel.InPayParameter.AddPayType(System.Int32,System.String,System.Decimal)">
+            <summary>
+            添加支付方式
+            </summary>
+            <param name="payTypeId">支付方式ID</param>
+            <param name="payTypeName">支付方式名称</param>
+            <param name="payAmount">支付金额</param>
+        </member>
+        <member name="T:PayAPIInterface.ParaModel.TradeCommonParameter">
+            <summary>
+            门诊通用参数
+            </summary>
+        </member>
+        <member name="M:PayAPIInterface.ParaModel.TradeCommonParameter.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.TradeCommonParameter.TradeId">
+            <summary>
+            订单ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.TradeCommonParameter.NetworkPatClassId">
+            <summary>
+            联网费别ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.TradeCommonParameter.TradeAmount">
+            <summary>
+            交易金额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.TradeCommonParameter.IsOutTrade">
+            <summary>
+            是否门诊交易
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.TradeCommonParameter.RefundAmount">
+            <summary>
+            退费金额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.TradeCommonParameter.NetCardNo">
+            <summary>
+            交易卡号（POS模式下必须返回）
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.ParaModel.TradePayParameter">
+            <summary>
+            门诊第三方入参
+            </summary>
+        </member>
+        <member name="M:PayAPIInterface.ParaModel.TradePayParameter.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.TradePayParameter.CommPara">
+            <summary>
+            通用参数
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.TradePayParameter.OutPatInfo">
+            <summary>
+            门诊人员信息
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.TradePayParameter.InPatInfo">
+            <summary>
+            住院人员信息
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.TradePayParameter.SettleInfo">
+            <summary>
+            结算信息（结算成功后由具体接口赋值，在撤销结算时，框架统一赋值）
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.TradePayParameter.SettleParaList">
+            <summary>
+            结算返回参数列表
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.TradePayParameter.Details">
+            <summary>
+            费用信息
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.TradePayParameter.PayTypeList">
+            <summary>
+            支付方式列表 （由具体接口赋值）
+            </summary>
+        </member>
+        <member name="M:PayAPIInterface.ParaModel.TradePayParameter.AddSettlePara(System.String,System.String,System.String)">
+            <summary>
+            添加返回参数
+            </summary>
+            <param name="paraName">参数名称</param>
+            <param name="paraValue">参数值</param>
+            <param name="memo">备注</param>
+        </member>
+        <member name="M:PayAPIInterface.ParaModel.TradePayParameter.AddPayType(System.Int32,System.String,System.Decimal)">
+            <summary>
+            添加支付方式
+            </summary>
+            <param name="payTypeId">支付方式ID</param>
+            <param name="payTypeName">支付方式名称</param>
+            <param name="payAmount">支付金额</param>
+        </member>
+        <member name="M:PayAPIInterface.ParaModel.TradePayParameter.ConvertFromOutParameter(PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            从门诊参数转换（框架内使用，具体接口禁用）
+            </summary>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIInterface.ParaModel.TradePayParameter.ConvertToOutParameter(PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            转换成门诊参数（框架内使用，具体接口禁用）
+            </summary>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIInterface.ParaModel.TradePayParameter.ConvertFromInParameter(PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            从住院参数转换 （框架内使用，具体接口禁用）
+            </summary>
+            <param name="outPara"></param>
+        </member>
+        <member name="M:PayAPIInterface.ParaModel.TradePayParameter.ConvertToInParameter(PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            转换成住院参数（框架内使用，具体接口禁用）
+            </summary>
+            <param name="outPara"></param>
+        </member>
+        <member name="T:PayAPIInterface.ParaModel.OutCommonParameter">
+            <summary>
+            门诊通用参数
+            </summary>
+        </member>
+        <member name="M:PayAPIInterface.ParaModel.OutCommonParameter.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.OutCommonParameter.OutNetworkSettleId">
+            <summary>
+            门诊联网结算ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.OutCommonParameter.TradeId">
+            <summary>
+            订单ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.OutCommonParameter.NetworkPatClassId">
+            <summary>
+            联网费别ID
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.OutCommonParameter.IsRegisterSettle">
+            <summary>
+            是否挂号报销
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.OutCommonParameter.TradeAmount">
+            <summary>
+            交易金额
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.OutCommonParameter.NetworkType">
+            <summary>
+            结算类型(ZJJS为诊间结算)
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.OutCommonParameter.ReturnFalseForever">
+            <summary>
+            医保不可撤销标志
+            </summary>
+        </member>
+        <member name="T:PayAPIInterface.ParaModel.OutPayParameter">
+            <summary>
+            门诊第三方入参
+            </summary>
+        </member>
+        <member name="M:PayAPIInterface.ParaModel.OutPayParameter.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.OutPayParameter.CommPara">
+            <summary>
+            通用参数
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.OutPayParameter.PatInfo">
+            <summary>
+            人员信息
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.OutPayParameter.RegInfo">
+            <summary>
+            登记信息（门诊结算成功后由具体接口赋值）
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.OutPayParameter.SettleInfo">
+            <summary>
+            结算信息（门诊结算成功后由具体接口赋值，在撤销结算时，框架统一赋值）
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.OutPayParameter.SettleParaList">
+            <summary>
+            结算返回参数列表
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.OutPayParameter.Details">
+            <summary>
+            费用信息
+            </summary>
+        </member>
+        <member name="P:PayAPIInterface.ParaModel.OutPayParameter.PayTypeList">
+            <summary>
+            支付方式列表 （由具体接口赋值）
+            </summary>
+        </member>
+        <member name="M:PayAPIInterface.ParaModel.OutPayParameter.AddSettlePara(System.String,System.String,System.String)">
+            <summary>
+            添加返回参数
+            </summary>
+            <param name="paraName">参数名称</param>
+            <param name="paraValue">参数值</param>
+            <param name="memo">备注</param>
+        </member>
+        <member name="M:PayAPIInterface.ParaModel.OutPayParameter.AddPayType(System.Int32,System.String,System.Decimal)">
+            <summary>
+            添加支付方式
+            </summary>
+            <param name="payTypeId">支付方式ID</param>
+            <param name="payTypeName">支付方式名称</param>
+            <param name="payAmount">支付金额</param>
+        </member>
+        <member name="T:PayAPIInterface.IPayCompanyInterface">
+            <summary>
+            联网报销统一接口
+            </summary>
+        </member>
+        <member name="M:PayAPIInterface.IPayCompanyInterface.NetworkReadCard">
+            <summary>
+            读取医保卡信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIInterface.IPayCompanyInterface.OutNetworkRegister(PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            门诊登记
+            </summary>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIInterface.IPayCompanyInterface.OutNetworkPreSettle(PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            门诊预结算
+            </summary>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIInterface.IPayCompanyInterface.OutNetworkSettle(PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            门诊结算
+            </summary>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIInterface.IPayCompanyInterface.CancelOutNetworkSettle(PayAPIInterface.ParaModel.OutPayParameter)">
+            <summary>
+            撤销门诊结算
+            </summary>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIInterface.IPayCompanyInterface.InNetworkRegister(PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            住院登记
+            </summary>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIInterface.IPayCompanyInterface.CancelInNetworkRegister(PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            撤销住院登记
+            </summary>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIInterface.IPayCompanyInterface.InNetworkPreSettle(PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            住院预结算
+            </summary>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIInterface.IPayCompanyInterface.InNetworkSettle(PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            住院结算
+            </summary>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PayAPIInterface.IPayCompanyInterface.CancelInNetworkSettle(PayAPIInterface.ParaModel.InPayParameter)">
+            <summary>
+            撤销住院结算
+            </summary>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

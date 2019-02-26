@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PayAPIInterfaceHandle.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PayAPIInterfaceHandle_webservice_inpatientRedeemWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.81.76.111:6068/City/inpatientRedeem.asmx</Value>
+    </Setting>
+    <Setting Name="PayAPIInterfaceHandle_AHFYCityWebReference_IJQCenterWebServiceservice" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.81.245.3:6888/JQCenterWebService/JQCenterWebService.exe/soap/IJQCenterWebService</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

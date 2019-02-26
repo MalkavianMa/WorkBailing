@@ -1,0 +1,1240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="IJQCenterWebServiceservice" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types />
+  <message name="ConnectTest0Request">
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="ConnectTest0Response">
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="GetPersonInfo1Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sMedicalCode" type="xs:string" />
+    <part name="sCardCode" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="GetPersonInfo1Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="InpatientRegister2Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sInpatientCode" type="xs:string" />
+    <part name="sMedicalCode" type="xs:string" />
+    <part name="sCardCode" type="xs:string" />
+    <part name="sPeopCode" type="xs:string" />
+    <part name="sPeopName" type="xs:string" />
+    <part name="sSex" type="xs:string" />
+    <part name="sAge" type="xs:string" />
+    <part name="sBirthDay" type="xs:string" />
+    <part name="sIDCardNo" type="xs:string" />
+    <part name="sDiagnoseCodeIn1" type="xs:string" />
+    <part name="sDiagnoseNameIn1" type="xs:string" />
+    <part name="sDiagnoseCodeIn2" type="xs:string" />
+    <part name="sDiagnoseNameIn2" type="xs:string" />
+    <part name="sDiagnoseCodeIn3" type="xs:string" />
+    <part name="sDiagnoseNameIn3" type="xs:string" />
+    <part name="sOperationCode1" type="xs:string" />
+    <part name="sOperationName1" type="xs:string" />
+    <part name="sOperationCode2" type="xs:string" />
+    <part name="sOperationName2" type="xs:string" />
+    <part name="sOperationCode3" type="xs:string" />
+    <part name="sOperationName3" type="xs:string" />
+    <part name="sSectionOfficeName" type="xs:string" />
+    <part name="sSectionOfficeCode" type="xs:string" />
+    <part name="sCureCode" type="xs:string" />
+    <part name="sInHospitalCode" type="xs:string" />
+    <part name="sInHosptialDate" type="xs:string" />
+    <part name="sBed" type="xs:string" />
+    <part name="sDoctorName" type="xs:string" />
+    <part name="sChangeCode" type="xs:string" />
+    <part name="sChangeRCode" type="xs:string" />
+    <part name="sCivilCode" type="xs:string" />
+    <part name="sBearCode" type="xs:string" />
+    <part name="sOperatorName" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="InpatientRegister2Response">
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="InpatientRegisterModify3Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sInpatientCode" type="xs:string" />
+    <part name="sMedicalCode" type="xs:string" />
+    <part name="sCardCode" type="xs:string" />
+    <part name="sPeopCode" type="xs:string" />
+    <part name="sPeopName" type="xs:string" />
+    <part name="sSex" type="xs:string" />
+    <part name="sAge" type="xs:string" />
+    <part name="sBirthDay" type="xs:string" />
+    <part name="sIDCardNo" type="xs:string" />
+    <part name="sDiagnoseCodeIn1" type="xs:string" />
+    <part name="sDiagnoseNameIn1" type="xs:string" />
+    <part name="sDiagnoseCodeIn2" type="xs:string" />
+    <part name="sDiagnoseNameIn2" type="xs:string" />
+    <part name="sDiagnoseCodeIn3" type="xs:string" />
+    <part name="sDiagnoseNameIn3" type="xs:string" />
+    <part name="sOperationCode1" type="xs:string" />
+    <part name="sOperationName1" type="xs:string" />
+    <part name="sOperationCode2" type="xs:string" />
+    <part name="sOperationName2" type="xs:string" />
+    <part name="sOperationCode3" type="xs:string" />
+    <part name="sOperationName3" type="xs:string" />
+    <part name="sSectionOfficeName" type="xs:string" />
+    <part name="sSectionOfficeCode" type="xs:string" />
+    <part name="sCureCode" type="xs:string" />
+    <part name="sInHospitalCode" type="xs:string" />
+    <part name="sInHosptialDate" type="xs:string" />
+    <part name="sBed" type="xs:string" />
+    <part name="sDoctorName" type="xs:string" />
+    <part name="sChangeCode" type="xs:string" />
+    <part name="sChangeRCode" type="xs:string" />
+    <part name="sCivilCode" type="xs:string" />
+    <part name="sBearCode" type="xs:string" />
+    <part name="sOperatorName" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="InpatientRegisterModify3Response">
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="InpatientFeeUpLoad4Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sCenterItemCode" type="xs:string" />
+    <part name="sItemKey" type="xs:string" />
+    <part name="sItemType" type="xs:string" />
+    <part name="sReceiptName" type="xs:string" />
+    <part name="sItemCode" type="xs:string" />
+    <part name="sItemName" type="xs:string" />
+    <part name="sItemSpec" type="xs:string" />
+    <part name="sItemDose" type="xs:string" />
+    <part name="sItemArea" type="xs:string" />
+    <part name="sItemProc" type="xs:string" />
+    <part name="sItemPart" type="xs:string" />
+    <part name="sIfCompound" type="xs:string" />
+    <part name="sTime" type="xs:string" />
+    <part name="sUnit" type="xs:string" />
+    <part name="sPrice" type="xs:string" />
+    <part name="sSum" type="xs:string" />
+    <part name="sSectionOfficeName" type="xs:string" />
+    <part name="sSectionOfficeCode" type="xs:string" />
+    <part name="sDoctorName" type="xs:string" />
+    <part name="sBed" type="xs:string" />
+    <part name="sOperatorDate" type="xs:string" />
+    <part name="sInputName" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="InpatientFeeUpLoad4Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="InpatientFeeCancel5Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sCenterKey" type="xs:string" />
+    <part name="sItemKey" type="xs:string" />
+    <part name="sOperatorDate" type="xs:string" />
+    <part name="sInputName" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="InpatientFeeCancel5Response">
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="InpatientFeeCancelAll6Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="InpatientFeeCancelAll6Response">
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="InpatientRegisterCancel7Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sReason" type="xs:string" />
+    <part name="sOperatorName" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="InpatientRegisterCancel7Response">
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="InpatientOutRegister8Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sDiagnoseCodeOut1" type="xs:string" />
+    <part name="sDiagnoseNameOut1" type="xs:string" />
+    <part name="sDiagnoseCodeOut2" type="xs:string" />
+    <part name="sDiagnoseNameOut2" type="xs:string" />
+    <part name="sDiagnoseCodeOut3" type="xs:string" />
+    <part name="sDiagnoseNameOut3" type="xs:string" />
+    <part name="sSectionOfficeName" type="xs:string" />
+    <part name="sSectionOfficeCode" type="xs:string" />
+    <part name="sOutHospitalCode" type="xs:string" />
+    <part name="sOutHosptialDate" type="xs:string" />
+    <part name="sOperatorName" type="xs:string" />
+    <part name="sReceiptCode" type="xs:string" />
+    <part name="sAllInCost" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="InpatientOutRegister8Response">
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="InpatientOutRegisterCancel9Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sReason" type="xs:string" />
+    <part name="sOperatorName" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="InpatientOutRegisterCancel9Response">
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="InpatientTryCalculate10Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sCalcCode" type="xs:string" />
+    <part name="sAllInCost" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="InpatientTryCalculate10Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="InpatientCalculate11Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sCalcCode" type="xs:string" />
+    <part name="sReceiptCode" type="xs:string" />
+    <part name="sAllInCost" type="xs:string" />
+    <part name="sOperatorName" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="InpatientCalculate11Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="InpatientCalculateCancel12Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sCalculateCode" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sReason" type="xs:string" />
+    <part name="sOperatorName" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="InpatientCalculateCancel12Response">
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="DownloadInPFee13Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="DownloadInPFee13Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="SubmitApply14Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sDiagnoseCodeOut1" type="xs:string" />
+    <part name="sDiagnoseNameOut1" type="xs:string" />
+    <part name="sDiagnoseCodeOut2" type="xs:string" />
+    <part name="sDiagnoseNameOut2" type="xs:string" />
+    <part name="sDiagnoseCodeOut3" type="xs:string" />
+    <part name="sDiagnoseNameOut3" type="xs:string" />
+    <part name="sCalcCode" type="xs:string" />
+    <part name="sOperatorName" type="xs:string" />
+    <part name="sAllInCost" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="SubmitApply14Response">
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="SearchApply15Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="SearchApply15Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="ItemContrastUp16Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sCenterItemC" type="xs:string" />
+    <part name="sItemCode" type="xs:string" />
+    <part name="sItemName" type="xs:string" />
+    <part name="sItemSpec" type="xs:string" />
+    <part name="sItemDose" type="xs:string" />
+    <part name="sItemArea" type="xs:string" />
+    <part name="sItemProc" type="xs:string" />
+    <part name="sItemPart" type="xs:string" />
+    <part name="sUnit" type="xs:string" />
+    <part name="sPrice" type="xs:string" />
+    <part name="sItemType" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="ItemContrastUp16Response">
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="ItemContrastDown17Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sCenterItemC" type="xs:string" />
+    <part name="sItemCode" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="ItemContrastDown17Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="DownCalType18Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="DownCalType18Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="SearchHospital19Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="SearchHospital19Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="SearchItem20Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sHelp" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="SearchItem20Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="InpatientAddFee21Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sCheckHosCode" type="xs:string" />
+    <part name="sCenterItemCode" type="xs:string" />
+    <part name="sCenterItemName" type="xs:string" />
+    <part name="sTime" type="xs:string" />
+    <part name="sUnit" type="xs:string" />
+    <part name="sPrice" type="xs:string" />
+    <part name="sSum" type="xs:string" />
+    <part name="sSectionOfficeName" type="xs:string" />
+    <part name="sSectionOfficeCode" type="xs:string" />
+    <part name="sDoctorName" type="xs:string" />
+    <part name="sBed" type="xs:string" />
+    <part name="sOperatorDate" type="xs:string" />
+    <part name="sInputName" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="InpatientAddFee21Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="DownItemList22Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="DownItemList22Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="SearchCalcuR23Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sCalculateCode" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="SearchCalcuR23Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="DownCalcuList24Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sBeginDate" type="xs:string" />
+    <part name="sEndDate" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="DownCalcuList24Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="ItemContrastAllDown25Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="ItemContrastAllDown25Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="ItemContrastAllUp26Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sInput" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="ItemContrastAllUp26Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="InpatientFeeUpLoadAll27Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sInput" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="InpatientFeeUpLoadAll27Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="InpatDiagnosisUpdate28Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sUserCode" type="xs:string" />
+    <part name="sUserPass" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sInpatientID" type="xs:string" />
+    <part name="sStature" type="xs:string" />
+    <part name="sWeight" type="xs:string" />
+    <part name="sTreatCode" type="xs:string" />
+    <part name="sIcdno" type="xs:string" />
+    <part name="sIcdName" type="xs:string" />
+    <part name="sSectionOfficeCode" type="xs:string" />
+    <part name="sCureCode" type="xs:string" />
+    <part name="sInHospitalCode" type="xs:string" />
+    <part name="sInHosptialDate" type="xs:string" />
+    <part name="sOperatorName" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="InpatDiagnosisUpdate28Response">
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="DownTreat29Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sUserCode" type="xs:string" />
+    <part name="sUserPass" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sYear" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="DownTreat29Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="DownICD30Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sUserCode" type="xs:string" />
+    <part name="sUserPass" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="DownICD30Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="DownHospitals31Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sUserCode" type="xs:string" />
+    <part name="sUserPass" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="updateTime" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="DownHospitals31Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="uploadTransfer32Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sUserCode" type="xs:string" />
+    <part name="sUserPass" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="truncode" type="xs:string" />
+    <part name="stype" type="xs:string" />
+    <part name="memberno" type="xs:string" />
+    <part name="idcardno" type="xs:string" />
+    <part name="name" type="xs:string" />
+    <part name="sex" type="xs:string" />
+    <part name="birthday" type="xs:string" />
+    <part name="bookno" type="xs:string" />
+    <part name="telphone" type="xs:string" />
+    <part name="turntype" type="xs:string" />
+    <part name="icdcode" type="xs:string" />
+    <part name="icdname" type="xs:string" />
+    <part name="turndate" type="xs:string" />
+    <part name="fromhospitalcode" type="xs:string" />
+    <part name="fromhospitalname" type="xs:string" />
+    <part name="tohospitalcode" type="xs:string" />
+    <part name="tohospitalname" type="xs:string" />
+    <part name="tohospitallevel" type="xs:string" />
+    <part name="tohospitalteclevel" type="xs:string" />
+    <part name="leavedateoflasttime" type="xs:string" />
+    <part name="outofficeoflasttime" type="xs:string" />
+    <part name="icdcodeoflasttime" type="xs:string" />
+    <part name="icdnameoflasttime" type="xs:string" />
+    <part name="doctorname" type="xs:string" />
+    <part name="remark" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="Outtruncode" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="uploadTransfer32Response">
+    <part name="Outtruncode" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="cancelTransfer33Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sUserCode" type="xs:string" />
+    <part name="sUserPass" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="truncode" type="xs:string" />
+    <part name="memberno" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="cancelTransfer33Response">
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <message name="downloadTransfer34Request">
+    <part name="sAreaCode" type="xs:string" />
+    <part name="sUserCode" type="xs:string" />
+    <part name="sUserPass" type="xs:string" />
+    <part name="sHospitalCode" type="xs:string" />
+    <part name="inorout" type="xs:string" />
+    <part name="truncode" type="xs:string" />
+    <part name="memberno" type="xs:string" />
+    <part name="startturndate" type="xs:string" />
+    <part name="endturndate" type="xs:string" />
+    <part name="sObligate1" type="xs:string" />
+    <part name="sObligate2" type="xs:string" />
+    <part name="sObligate3" type="xs:string" />
+    <part name="sObligate4" type="xs:string" />
+    <part name="sObligate5" type="xs:string" />
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+  </message>
+  <message name="downloadTransfer34Response">
+    <part name="sResult" type="xs:string" />
+    <part name="sMessage" type="xs:string" />
+    <part name="return" type="xs:int" />
+  </message>
+  <portType name="IJQCenterWebService">
+    <operation name="ConnectTest">
+      <input message="tns:ConnectTest0Request" />
+      <output message="tns:ConnectTest0Response" />
+    </operation>
+    <operation name="GetPersonInfo">
+      <input message="tns:GetPersonInfo1Request" />
+      <output message="tns:GetPersonInfo1Response" />
+    </operation>
+    <operation name="InpatientRegister">
+      <input message="tns:InpatientRegister2Request" />
+      <output message="tns:InpatientRegister2Response" />
+    </operation>
+    <operation name="InpatientRegisterModify">
+      <input message="tns:InpatientRegisterModify3Request" />
+      <output message="tns:InpatientRegisterModify3Response" />
+    </operation>
+    <operation name="InpatientFeeUpLoad">
+      <input message="tns:InpatientFeeUpLoad4Request" />
+      <output message="tns:InpatientFeeUpLoad4Response" />
+    </operation>
+    <operation name="InpatientFeeCancel">
+      <input message="tns:InpatientFeeCancel5Request" />
+      <output message="tns:InpatientFeeCancel5Response" />
+    </operation>
+    <operation name="InpatientFeeCancelAll">
+      <input message="tns:InpatientFeeCancelAll6Request" />
+      <output message="tns:InpatientFeeCancelAll6Response" />
+    </operation>
+    <operation name="InpatientRegisterCancel">
+      <input message="tns:InpatientRegisterCancel7Request" />
+      <output message="tns:InpatientRegisterCancel7Response" />
+    </operation>
+    <operation name="InpatientOutRegister">
+      <input message="tns:InpatientOutRegister8Request" />
+      <output message="tns:InpatientOutRegister8Response" />
+    </operation>
+    <operation name="InpatientOutRegisterCancel">
+      <input message="tns:InpatientOutRegisterCancel9Request" />
+      <output message="tns:InpatientOutRegisterCancel9Response" />
+    </operation>
+    <operation name="InpatientTryCalculate">
+      <input message="tns:InpatientTryCalculate10Request" />
+      <output message="tns:InpatientTryCalculate10Response" />
+    </operation>
+    <operation name="InpatientCalculate">
+      <input message="tns:InpatientCalculate11Request" />
+      <output message="tns:InpatientCalculate11Response" />
+    </operation>
+    <operation name="InpatientCalculateCancel">
+      <input message="tns:InpatientCalculateCancel12Request" />
+      <output message="tns:InpatientCalculateCancel12Response" />
+    </operation>
+    <operation name="DownloadInPFee">
+      <input message="tns:DownloadInPFee13Request" />
+      <output message="tns:DownloadInPFee13Response" />
+    </operation>
+    <operation name="SubmitApply">
+      <input message="tns:SubmitApply14Request" />
+      <output message="tns:SubmitApply14Response" />
+    </operation>
+    <operation name="SearchApply">
+      <input message="tns:SearchApply15Request" />
+      <output message="tns:SearchApply15Response" />
+    </operation>
+    <operation name="ItemContrastUp">
+      <input message="tns:ItemContrastUp16Request" />
+      <output message="tns:ItemContrastUp16Response" />
+    </operation>
+    <operation name="ItemContrastDown">
+      <input message="tns:ItemContrastDown17Request" />
+      <output message="tns:ItemContrastDown17Response" />
+    </operation>
+    <operation name="DownCalType">
+      <input message="tns:DownCalType18Request" />
+      <output message="tns:DownCalType18Response" />
+    </operation>
+    <operation name="SearchHospital">
+      <input message="tns:SearchHospital19Request" />
+      <output message="tns:SearchHospital19Response" />
+    </operation>
+    <operation name="SearchItem">
+      <input message="tns:SearchItem20Request" />
+      <output message="tns:SearchItem20Response" />
+    </operation>
+    <operation name="InpatientAddFee">
+      <input message="tns:InpatientAddFee21Request" />
+      <output message="tns:InpatientAddFee21Response" />
+    </operation>
+    <operation name="DownItemList">
+      <input message="tns:DownItemList22Request" />
+      <output message="tns:DownItemList22Response" />
+    </operation>
+    <operation name="SearchCalcuR">
+      <input message="tns:SearchCalcuR23Request" />
+      <output message="tns:SearchCalcuR23Response" />
+    </operation>
+    <operation name="DownCalcuList">
+      <input message="tns:DownCalcuList24Request" />
+      <output message="tns:DownCalcuList24Response" />
+    </operation>
+    <operation name="ItemContrastAllDown">
+      <input message="tns:ItemContrastAllDown25Request" />
+      <output message="tns:ItemContrastAllDown25Response" />
+    </operation>
+    <operation name="ItemContrastAllUp">
+      <input message="tns:ItemContrastAllUp26Request" />
+      <output message="tns:ItemContrastAllUp26Response" />
+    </operation>
+    <operation name="InpatientFeeUpLoadAll">
+      <input message="tns:InpatientFeeUpLoadAll27Request" />
+      <output message="tns:InpatientFeeUpLoadAll27Response" />
+    </operation>
+    <operation name="InpatDiagnosisUpdate">
+      <input message="tns:InpatDiagnosisUpdate28Request" />
+      <output message="tns:InpatDiagnosisUpdate28Response" />
+    </operation>
+    <operation name="DownTreat">
+      <input message="tns:DownTreat29Request" />
+      <output message="tns:DownTreat29Response" />
+    </operation>
+    <operation name="DownICD">
+      <input message="tns:DownICD30Request" />
+      <output message="tns:DownICD30Response" />
+    </operation>
+    <operation name="DownHospitals">
+      <input message="tns:DownHospitals31Request" />
+      <output message="tns:DownHospitals31Response" />
+    </operation>
+    <operation name="uploadTransfer">
+      <input message="tns:uploadTransfer32Request" />
+      <output message="tns:uploadTransfer32Response" />
+    </operation>
+    <operation name="cancelTransfer">
+      <input message="tns:cancelTransfer33Request" />
+      <output message="tns:cancelTransfer33Response" />
+    </operation>
+    <operation name="downloadTransfer">
+      <input message="tns:downloadTransfer34Request" />
+      <output message="tns:downloadTransfer34Response" />
+    </operation>
+  </portType>
+  <binding name="IJQCenterWebServicebinding" type="tns:IJQCenterWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="ConnectTest">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#ConnectTest" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetPersonInfo">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#GetPersonInfo" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InpatientRegister">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#InpatientRegister" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InpatientRegisterModify">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#InpatientRegisterModify" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InpatientFeeUpLoad">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#InpatientFeeUpLoad" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InpatientFeeCancel">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#InpatientFeeCancel" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InpatientFeeCancelAll">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#InpatientFeeCancelAll" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InpatientRegisterCancel">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#InpatientRegisterCancel" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InpatientOutRegister">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#InpatientOutRegister" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InpatientOutRegisterCancel">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#InpatientOutRegisterCancel" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InpatientTryCalculate">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#InpatientTryCalculate" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InpatientCalculate">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#InpatientCalculate" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InpatientCalculateCancel">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#InpatientCalculateCancel" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="DownloadInPFee">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#DownloadInPFee" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="SubmitApply">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#SubmitApply" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="SearchApply">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#SearchApply" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ItemContrastUp">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#ItemContrastUp" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ItemContrastDown">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#ItemContrastDown" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="DownCalType">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#DownCalType" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="SearchHospital">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#SearchHospital" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="SearchItem">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#SearchItem" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InpatientAddFee">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#InpatientAddFee" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="DownItemList">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#DownItemList" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="SearchCalcuR">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#SearchCalcuR" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="DownCalcuList">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#DownCalcuList" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ItemContrastAllDown">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#ItemContrastAllDown" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ItemContrastAllUp">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#ItemContrastAllUp" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InpatientFeeUpLoadAll">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#InpatientFeeUpLoadAll" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InpatDiagnosisUpdate">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#InpatDiagnosisUpdate" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="DownTreat">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#DownTreat" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="DownICD">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#DownICD" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="DownHospitals">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#DownHospitals" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="uploadTransfer">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#uploadTransfer" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="cancelTransfer">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#cancelTransfer" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="downloadTransfer">
+      <soap:operation soapAction="urn:JQCenterWebServiceIntf-IJQCenterWebService#downloadTransfer" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:JQCenterWebServiceIntf-IJQCenterWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="IJQCenterWebServiceservice">
+    <port name="IJQCenterWebServicePort" binding="tns:IJQCenterWebServicebinding">
+      <soap:address location="http://10.81.245.3:6888/JQCenterWebService/JQCenterWebService.exe/soap/IJQCenterWebService" />
+    </port>
+  </service>
+</definitions>

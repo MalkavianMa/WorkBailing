@@ -1,0 +1,690 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HISInterfaceService</name>
+    </assembly>
+    <members>
+        <member name="T:HISInterfaceService.In.IInService">
+            <summary>
+            住院服务接口
+            </summary>
+        </member>
+        <member name="M:HISInterfaceService.In.IInService.GetInPatInfo(System.Decimal)">
+            <summary>
+            获取住院患者信息
+            </summary>
+            <param name="outPatId">住院患者ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.IInService.GetInPatDetails(System.Decimal)">
+            <summary>
+            获取住院患者费用明细
+            </summary>
+            <param name="patInHosId">住院患者ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.IInService.GetInNetworkSettleMain(System.Decimal,System.String,System.String)">
+            <summary>
+            获取住院结算信息
+            </summary>
+            <param name="patInHosId">住院患者id</param>
+            <param name="settleNo">结算流水号</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.IInService.GetInNetworkRegister(System.Decimal)">
+            <summary>
+            获取住院登记信息
+            </summary>
+            <param name="patInHosId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.IInService.GetInNetworkRegTimes(System.Decimal)">
+            <summary>
+            获取住院患者登记次数
+            </summary>
+            <param name="InPatId">住院患者ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.IInService.GetInNetworkSettleId">
+            <summary>
+            获取住院结算ID
+            </summary>
+            <param name="tradeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.IInService.SaveInNetworkRegister(PayAPIInterface.Model.In.InNetworkRegisters)">
+            <summary>
+            保存住院登记信息
+            </summary>
+            <param name="outRegister">登记信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.IInService.SaveInNetworkRegisterCancelInfo(PayAPIInterface.Model.In.InNetworkRegisters)">
+            <summary>
+            撤销住院登记
+            </summary>
+            <param name="outRegister">登记信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.IInService.SaveInNetworkDetails(System.Collections.Generic.List{PayAPIInterface.Model.In.InNetworkUpDetail})">
+            <summary>
+            保存住院费用明细
+            </summary>
+            <param name="details">费用明细</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.IInService.SaveInNetworkSettle(PayAPIInterface.Model.In.InNetworkSettleMain)">
+            <summary>
+            保存住院结算信息
+            </summary>
+            <param name="settle">结算信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.IInService.SaveInNetworkSettleList(System.Collections.Generic.List{PayAPIInterface.Model.In.InNetworkSettleList})">
+            <summary>
+            保存住院结算参数信息
+            </summary>
+            <param name="settleList">结算信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.IInService.UpdateInNetworkRegister(PayAPIInterface.Model.In.InNetworkRegisters)">
+            <summary>
+            更新住院患者登记信息
+            </summary>
+            <param name="regInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.IInService.SaveInNetworkSettleRefund(PayAPIInterface.Model.In.InNetworkSettleMain)">
+            <summary>
+            保存住院退费信息
+            </summary>
+            <param name="settle"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HISInterfaceService.In.InService">
+            <summary>
+            住院服务
+            </summary>
+        </member>
+        <member name="P:HISInterfaceService.In.InService.APIPath">
+            <summary>
+            通用信息获取API路径
+            </summary>
+        </member>
+        <member name="M:HISInterfaceService.In.InService.GetInPatInfo(System.Decimal)">
+            <summary>
+            获取住院患者信息
+            </summary>
+            <param name="InPatId">住院患者ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.InService.GetInPatDetails(System.Decimal)">
+            <summary>
+            获取住院患者费用明细
+            </summary>
+            <param name="tradeId">交易编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.InService.GetInNetworkRegister(System.Decimal)">
+            <summary>
+            获取住院患者登记信息
+            </summary>
+            <param name="InPatId">住院患者ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.InService.GetInNetworkRegTimes(System.Decimal)">
+            <summary>
+            获取住院患者登记次数
+            </summary>
+            <param name="InPatId">住院患者ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.InService.GetInNetworkSettleMain(System.Decimal,System.String,System.String)">
+            <summary>
+            获取住院结算信息
+            </summary>
+            <param name="tradeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.InService.GetInNetworkSettleId">
+            <summary>
+            获取住院结算ID
+            </summary>
+            <param name="tradeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.InService.SaveInNetworkRegister(PayAPIInterface.Model.In.InNetworkRegisters)">
+            <summary>
+            保存住院登记信息
+            </summary>
+            <param name="InRegister"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.InService.SaveInNetworkRegisterCancelInfo(PayAPIInterface.Model.In.InNetworkRegisters)">
+            <summary>
+            保存住院登记信息
+            </summary>
+            <param name="InRegister"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.InService.SaveInNetworkDetails(System.Collections.Generic.List{PayAPIInterface.Model.In.InNetworkUpDetail})">
+            <summary>
+            保存住院费用明细
+            </summary>
+            <param name="details">费用明细</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.InService.SaveInNetworkSettle(PayAPIInterface.Model.In.InNetworkSettleMain)">
+            <summary>
+            保存住院结算信息
+            </summary>
+            <param name="settle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.InService.SaveInNetworkSettleList(System.Collections.Generic.List{PayAPIInterface.Model.In.InNetworkSettleList})">
+            <summary>
+            保存住院结算参数信息
+            </summary>
+            <param name="settle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.InService.UpdateInNetworkRegister(PayAPIInterface.Model.In.InNetworkRegisters)">
+            <summary>
+            更新住院患者登记信息
+            </summary>
+            <param name="regInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.In.InService.SaveInNetworkSettleRefund(PayAPIInterface.Model.In.InNetworkSettleMain)">
+            <summary>
+            保存住院退费信息
+            </summary>
+            <param name="settle"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HISInterfaceService.ServiceClassFactory">
+            <summary>
+            服务类工厂
+            </summary>
+        </member>
+        <member name="M:HISInterfaceService.ServiceClassFactory.GetICommInfoServiceInstance">
+            <summary>
+            获取通用服务实体类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.ServiceClassFactory.GetIOutServiceInstance">
+            <summary>
+            获取门诊服务实体类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.ServiceClassFactory.GetIInServiceInstance">
+            <summary>
+            获取住院服务实体类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HISInterfaceService.Comm.CommInfoService">
+            <summary>
+            通用信息获取服务
+            </summary>
+        </member>
+        <member name="P:HISInterfaceService.Comm.CommInfoService.APIPath">
+            <summary>
+            通用信息获取API路径
+            </summary>
+        </member>
+        <member name="F:HISInterfaceService.Comm.CommInfoService.NetTypeCacheDict">
+            <summary>
+            联网类型字典缓存
+            </summary>
+        </member>
+        <member name="M:HISInterfaceService.Comm.CommInfoService.GetOperatorInfo(System.String)">
+            <summary>
+            获取用户信息
+            </summary>
+            <param name="userSysId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Comm.CommInfoService.GetPayInstanceList">
+            <summary>
+            获取支付实体类
+            </summary>
+            <param name="userSysId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Comm.CommInfoService.GetNetworkVsInstitutions">
+            <summary>
+            获取联网机构对应信息
+            </summary>
+            <param name="userSysId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Comm.CommInfoService.GetNetworkDiagnosis(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            获取中心诊断字典
+            </summary>
+            <param name="networkPatClassId">联网费别ID</param>
+            <param name="input">检索信息</param>
+            <param name="memo">备注</param>
+            <param name="topCount">默认top数量</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Comm.CommInfoService.GetNetworkTypeDict(System.String,System.String,System.String,System.String)">
+            <summary>
+            获取联网类型字典
+            </summary>
+            <param name="networkPatClassId">联网费别ID</param>
+            <param name="input">检索信息</param>
+            <param name="memo">备注</param>
+            <param name="typeFlag">类型标志</param> 
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Comm.ICommInfoService.GetOperatorInfo(System.String)">
+            <summary>
+            获取操作员信息
+            </summary>
+            <param name="userSysId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Comm.ICommInfoService.GetPayInstanceList">
+            <summary>
+            获取支付实体类名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Comm.ICommInfoService.GetNetworkVsInstitutions">
+            <summary>
+            获取联网机构对应信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Comm.ICommInfoService.GetNetworkDiagnosis(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            获取中心诊断字典
+            </summary>
+            <param name="networkPatClassId">联网费别ID</param>
+            <param name="input">检索信息</param>
+            <param name="memo">备注</param>
+            <param name="topCount">默认top数量</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Comm.ICommInfoService.GetNetworkTypeDict(System.String,System.String,System.String,System.String)">
+            <summary>
+            获取联网类型字典
+            </summary>
+            <param name="networkPatClassId">联网费别ID</param>
+            <param name="input">检索信息</param>
+            <param name="memo">备注</param>
+            <param name="typeFlag">类型标志</param> 
+            <returns></returns>
+        </member>
+        <member name="T:HISInterfaceService.ParaModel.ServiceInParameter">
+            <summary>
+            服务调用入参
+            </summary>
+        </member>
+        <member name="P:HISInterfaceService.ParaModel.ServiceInParameter.CommInfo">
+            <summary>
+            通用信息
+            </summary>
+        </member>
+        <member name="P:HISInterfaceService.ParaModel.ServiceInParameter.ParaObject">
+            <summary>
+            传入参数
+            </summary>
+        </member>
+        <member name="T:HISInterfaceService.ParaModel.CommInfo">
+            <summary>
+            传入参数通用信息
+            </summary>
+        </member>
+        <member name="P:HISInterfaceService.ParaModel.CommInfo.UserSysId">
+            <summary>
+            操作员ID
+            </summary>
+        </member>
+        <member name="P:HISInterfaceService.ParaModel.CommInfo.WorkstationId">
+            <summary>
+            工作站ID
+            </summary>
+        </member>
+        <member name="F:HISInterfaceService.ParaModel.CommInfo.ipAddress">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="P:HISInterfaceService.ParaModel.CommInfo.IpAddress">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="F:HISInterfaceService.ParaModel.CommInfo.hostName">
+            <summary>
+            计算机名称
+            </summary>
+        </member>
+        <member name="P:HISInterfaceService.ParaModel.CommInfo.HostName">
+            <summary>
+            计算机名称
+            </summary>
+        </member>
+        <member name="T:HISInterfaceService.ParaModel.ServiceReturnParameter`1">
+            <summary>
+            服务调用出参
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:HISInterfaceService.ParaModel.ServiceReturnParameter`1.IsSuccess">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:HISInterfaceService.ParaModel.ServiceReturnParameter`1.ErrInfo">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:HISInterfaceService.ParaModel.ServiceReturnParameter`1.ReturnObject">
+            <summary>
+            返回信息类
+            </summary>
+        </member>
+        <member name="T:HISInterfaceService.Out.IOutService">
+            <summary>
+            门诊服务接口
+            </summary>
+        </member>
+        <member name="M:HISInterfaceService.Out.IOutService.GetOutNetworkSettleId">
+            <summary>
+            获取门诊结算ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.IOutService.GetOutPatInfo(System.Decimal)">
+            <summary>
+            获取门诊患者信息
+            </summary>
+            <param name="outPatId">门诊患者ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.IOutService.GetOutPatDetails(System.Decimal)">
+            <summary>
+            获取门诊患者费用明细
+            </summary>
+            <param name="tradeId">交易编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.IOutService.GetRefundTradePayRecords(System.Decimal)">
+            <summary>
+            获取要退费的支付交易记录
+            </summary>
+            <param name="tradeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.IOutService.GetCancelTradePayRecords(System.Decimal)">
+            <summary>
+            获取要撤销的支付交易记录
+            </summary>
+            <param name="tradeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.IOutService.GetOutNetworkSettleMain(System.Decimal)">
+            <summary>
+            获取门诊结算信息
+            </summary>
+            <param name="tradeId">交易编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.IOutService.GetOutNetworkSettleStatus(System.Decimal)">
+            <summary>
+            获取门诊结算状态
+            </summary>
+            <param name="tradeId">交易编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.IOutService.GetOutPatDetailsByChargeIds(System.String,System.String)">
+            <summary>
+            根据费用ID获取相应的费用明细信息
+            </summary>
+            <param name="chargeIds">费用列表</param>
+            <param name="networkPatClassId">联网费别ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.IOutService.GetOutNetworkSettleMainBySettleNo(System.Decimal,System.String)">
+            <summary>
+            获取门诊结算信息
+            </summary>
+            <param name="outPatId">门诊患者ID</param>
+            <param name="settleNo">结算流水号</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.IOutService.SaveOutNetworkRegister(PayAPIInterface.Model.Out.OutNetworkRegisters)">
+            <summary>
+            保存门诊登记信息
+            </summary>
+            <param name="outRegister">登记信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.IOutService.SaveOutNetworkDetails(System.Collections.Generic.List{PayAPIInterface.Model.Out.OutNetworkUpDetail})">
+            <summary>
+            保存门诊费用信息
+            </summary>
+            <param name="details">费用信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.IOutService.SaveOutNetworkSettle(PayAPIInterface.Model.Out.OutNetworkSettleMain)">
+            <summary>
+            保存门诊结算信息
+            </summary>
+            <param name="settle">结算信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.IOutService.SaveOutNetworkSettleList(System.Collections.Generic.List{PayAPIInterface.Model.Out.OutNetworkSettleList})">
+            <summary>
+            保存门诊结算饭参数信息
+            </summary>
+            <param name="settleList">门诊参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.IOutService.SaveTradePayingStatus(PayAPIInterface.Model.Out.TradePayRecord)">
+            <summary>
+            保存支付记录状态
+            </summary>
+            <param name="tradePayRecord"></param>
+        </member>
+        <member name="M:HISInterfaceService.Out.IOutService.SetTradePayRecord(System.Collections.Generic.List{PayAPIInterface.Model.Out.TradePayRecord})">
+            <summary>
+            更新订单支付记录
+            </summary>
+            <param name="tradePayRecordList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.IOutService.SaveTradePayRecords(System.Collections.Generic.List{PayAPIInterface.Model.Out.TradePayRecord})">
+            <summary>
+            保存门诊交易支付流水信息
+            </summary>
+            <param name="tradePayRecordList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.IOutService.SaveOutNetworkRefund(PayAPIInterface.Model.Out.OutNetworkSettleMain)">
+            <summary>
+            保存门诊退费信息
+            </summary>
+            <param name="settle">结算信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.IOutService.SaveOutNetworkSettleStatus(PayAPIInterface.Model.Out.OutNetworkSettleStatus)">
+            <summary>
+            保存门诊结算状态
+            </summary>
+            <param name="settleStatus"></param>
+        </member>
+        <member name="T:HISInterfaceService.Out.OutService">
+            <summary>
+            门诊服务
+            </summary>
+        </member>
+        <member name="P:HISInterfaceService.Out.OutService.APIPath">
+            <summary>
+            通用信息获取API路径
+            </summary>
+        </member>
+        <member name="M:HISInterfaceService.Out.OutService.GetOutNetworkSettleId">
+            <summary>
+            获取门诊结算ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.OutService.GetOutPatInfo(System.Decimal)">
+            <summary>
+            获取门诊患者信息
+            </summary>
+            <param name="outPatId">门诊患者ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.OutService.GetOutPatDetails(System.Decimal)">
+            <summary>
+            获取门诊患者费用明细
+            </summary>
+            <param name="tradeId">交易编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.OutService.GetRefundTradePayRecords(System.Decimal)">
+            <summary>
+            获取要退费的支付交易记录
+            </summary>
+            <param name="tradeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.OutService.GetCancelTradePayRecords(System.Decimal)">
+            <summary>
+            获取要撤销的支付交易记录
+            </summary>
+            <param name="tradeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.OutService.GetOutNetworkSettleMain(System.Decimal)">
+            <summary>
+            获取门诊结算信息
+            </summary>
+            <param name="outNetworkSettleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.OutService.GetOutNetworkSettleStatus(System.Decimal)">
+            <summary>
+            获取门诊结算状态
+            </summary>
+            <param name="tradeId">交易编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.OutService.GetOutPatDetailsByChargeIds(System.String,System.String)">
+            <summary>
+            根据费用ID获取相应的费用明细信息
+            </summary>
+            <param name="chargeIds">费用列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.OutService.GetOutNetworkSettleMainBySettleNo(System.Decimal,System.String)">
+            <summary>
+            获取门诊结算信息
+            </summary>
+            <param name="outPatId">门诊患者ID</param>
+            <param name="settleNo">结算流水号</param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.OutService.SaveOutNetworkRegister(PayAPIInterface.Model.Out.OutNetworkRegisters)">
+            <summary>
+            保存门诊登记信息
+            </summary>
+            <param name="outRegister"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.OutService.SaveOutNetworkDetails(System.Collections.Generic.List{PayAPIInterface.Model.Out.OutNetworkUpDetail})">
+            <summary>
+            保存门诊费用信息
+            </summary>
+            <param name="details"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.OutService.SaveOutNetworkSettle(PayAPIInterface.Model.Out.OutNetworkSettleMain)">
+            <summary>
+            保存门诊结算信息
+            </summary>
+            <param name="settle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.OutService.SaveOutNetworkSettleList(System.Collections.Generic.List{PayAPIInterface.Model.Out.OutNetworkSettleList})">
+            <summary>
+            保存门诊结算返回参数信息
+            </summary>
+            <param name="settle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.OutService.SaveTradePayingStatus(PayAPIInterface.Model.Out.TradePayRecord)">
+            <summary>
+            保存订单支付中状态
+            </summary>
+            <param name="tradePayRecord"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.OutService.SetTradePayRecord(System.Collections.Generic.List{PayAPIInterface.Model.Out.TradePayRecord})">
+            <summary>
+            更新订单支付记录
+            </summary>
+            <param name="tradePayRecordList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.OutService.SaveTradePayRecords(System.Collections.Generic.List{PayAPIInterface.Model.Out.TradePayRecord})">
+            <summary>
+            保存门诊交易支付流水信息
+            </summary>
+            <param name="settle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.OutService.SaveOutNetworkRefund(PayAPIInterface.Model.Out.OutNetworkSettleMain)">
+            <summary>
+            保存门诊退费信息
+            </summary>
+            <param name="settle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HISInterfaceService.Out.OutService.SaveOutNetworkSettleStatus(PayAPIInterface.Model.Out.OutNetworkSettleStatus)">
+            <summary>
+            保存门诊结算状态
+            </summary>
+            <param name="settle"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HISInterfaceService.ServiceInvoke">
+            <summary>
+            HIS服务调用
+            </summary> 
+        </member>
+        <member name="F:HISInterfaceService.ServiceInvoke.Url">
+            <summary>
+            调用服务地址
+            </summary>
+        </member>
+        <member name="F:HISInterfaceService.ServiceInvoke.commInfo">
+            <summary>
+            通用信息
+            </summary>
+        </member>
+        <member name="M:HISInterfaceService.ServiceInvoke.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_url"></param>
+        </member>
+        <member name="M:HISInterfaceService.ServiceInvoke.Invoke``1(System.Object,System.Boolean)">
+            <summary>
+            服务调用
+            </summary>
+            <param name="obj">发送对象</param>
+            <param name="isRecordLog">是否记录日志</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

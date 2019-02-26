@@ -709,6 +709,7 @@ namespace PayAPIInstance.Dareway.DIWEI
                     //string syzhlx = "5";
 
                     //MSSQLHelper sqlhelper = new MSSQLHelper("Data Source=172.22.25.6;Initial Catalog=COMM;User ID=power;Password=m@ssuns0ft009");
+                    MSSQLHelper sqlhelper = new MSSQLHelper(PayAPIConfig.InstitutionDict[1].Memo);
 
                     //string bh1 = outReimPara.SettleInfo.RelationId.ToString("0"); //outReimPara.CommPara.OutNetworkSettleId.ToString();
                     //string bh2 = outReimPara.SettleInfo.NetworkPatName;
